@@ -45,7 +45,7 @@
         UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [doneButton setFrame:CGRectMake(1024 - 80, 30 ,80, 30)];
         [doneButton addTarget:self action:@selector(clickDoneButton:) forControlEvents:UIControlEventTouchUpInside];
-        [doneButton setTitle:NSLocalizedString(@"Done", nil) forState:UIControlStateNormal];
+        [doneButton setTitle:NSLocalizedString(@"关闭", nil) forState:UIControlStateNormal];
         [self.view addSubview:doneButton];
     }
     return self;

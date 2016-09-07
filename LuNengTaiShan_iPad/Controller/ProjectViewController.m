@@ -7,6 +7,9 @@
 //
 
 #import "ProjectViewController.h"
+#import "ProjectIntroductionViewController.h"
+#import "ProjectHouseViewController.h"
+#import "ProjectLandscapeViewController.h"
 
 @interface ProjectViewController () {
     CATransition *transition;
@@ -37,6 +40,21 @@
         [closButton setFrame:CGRectMake(946, 21, 50, 50)];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
+        
+        UIButton *introductionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [introductionButton setFrame:CGRectMake(126, 319, 206, 156)];
+        [introductionButton addTarget:self action:@selector(clickIntroductionButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:introductionButton];
+        
+        UIButton *houseButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [houseButton setFrame:CGRectMake(441, 319, 148, 156)];
+        [houseButton addTarget:self action:@selector(clickHouseButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:houseButton];
+        
+        UIButton *landscapeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [landscapeButton setFrame:CGRectMake(708, 319, 148, 156)];
+        [landscapeButton addTarget:self action:@selector(clickLandscapeButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:landscapeButton];
     }
     return self;
 }
@@ -49,6 +67,24 @@
 - (void)clickCloseButton:(id)sender {
     [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
     [self.navigationController popViewControllerAnimated:NO];
+}
+
+- (void)clickIntroductionButton:(id)sender {
+    ProjectIntroductionViewController *projectIntroductionViewController = [[ProjectIntroductionViewController alloc] init];
+    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+    [[self navigationController] pushViewController:projectIntroductionViewController animated:NO];
+}
+
+- (void)clickHouseButton:(id)sender {
+    ProjectHouseViewController *projectHouseViewController = [[ProjectHouseViewController alloc] init];
+    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+    [[self navigationController] pushViewController:projectHouseViewController animated:NO];
+}
+
+- (void)clickLandscapeButton:(id)sender {
+    ProjectLandscapeViewController *projectLandscapeViewController = [[ProjectLandscapeViewController alloc] init];
+    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+    [[self navigationController] pushViewController:projectLandscapeViewController animated:NO];
 }
 
 - (void)viewDidLoad {

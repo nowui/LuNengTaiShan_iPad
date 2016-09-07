@@ -7,6 +7,8 @@
 //
 
 #import "RegionalViewController.h"
+#import "RegionalTrafficViewController.h"
+#import "RegionalMatchingViewController.h"
 
 @interface RegionalViewController () {
     CATransition *transition;
@@ -37,6 +39,16 @@
         [closButton setFrame:CGRectMake(946, 21, 50, 50)];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
+        
+        UIButton *trafficButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [trafficButton setFrame:CGRectMake(254, 322, 167, 153)];
+        [trafficButton addTarget:self action:@selector(clickTrafficButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:trafficButton];
+        
+        UIButton *matchingButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [matchingButton setFrame:CGRectMake(572, 322, 198, 153)];
+        [matchingButton addTarget:self action:@selector(clickMatchingButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:matchingButton];
     }
     return self;
 }
@@ -49,6 +61,18 @@
 - (void)clickCloseButton:(id)sender {
     [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
     [self.navigationController popViewControllerAnimated:NO];
+}
+
+- (void)clickTrafficButton:(id)sender {
+    RegionalTrafficViewController *regionalTrafficViewController = [[RegionalTrafficViewController alloc] init];
+    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+    [[self navigationController] pushViewController:regionalTrafficViewController animated:NO];
+}
+
+- (void)clickMatchingButton:(id)sender {
+    RegionalMatchingViewController *regionalMatchingViewController = [[RegionalMatchingViewController alloc] init];
+    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+    [[self navigationController] pushViewController:regionalMatchingViewController animated:NO];
 }
 
 - (void)viewDidLoad {

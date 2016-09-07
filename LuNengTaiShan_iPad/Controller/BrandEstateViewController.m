@@ -7,6 +7,7 @@
 //
 
 #import "BrandEstateViewController.h"
+#import "BrandEstate2View.h"
 
 @interface BrandEstateViewController () <UIScrollViewDelegate> {
     CATransition *transition;
@@ -33,9 +34,17 @@
         [self.view addSubview:mainScrollView];
         
         for(int i = 0; i < 5; i++) {
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(1024 * i, 0, 1024, 768)];
-            [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brand_estate_%d.png", i]]];
-            [mainScrollView addSubview:imageView];
+            if(i == 2) {
+                BrandEstate2View *brandEstate2View = [[BrandEstate2View alloc] initWithFrame:CGRectMake(1024 * i, 0, 1024, 768)];
+                [mainScrollView addSubview:brandEstate2View];
+            } else {
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(1024 * i, 0, 1024, 768)];
+                [mainScrollView addSubview:view];
+                
+                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+                [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brand_estate_%d.png", i]]];
+                [view addSubview:imageView];
+            }
         }
         
         UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
