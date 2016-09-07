@@ -10,6 +10,7 @@
 #import "BrandViewController.h"
 #import "RegionalViewController.h"
 #import "ProjectViewController.h"
+#import "VideoViewController.h"
 
 @interface MainViewController () {
     CATransition *transition;
@@ -73,7 +74,9 @@
 }
 
 - (void)clickVideoButton:(id)sender {
-    NSLog(@"123");
+    VideoViewController *videoViewController = [[VideoViewController alloc] init];
+    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+    [[self navigationController] pushViewController:videoViewController animated:NO];
 }
 
 - (void)viewDidLoad {

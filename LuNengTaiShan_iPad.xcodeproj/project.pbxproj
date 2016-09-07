@@ -17,6 +17,8 @@
 		750D6EC71D7EEE9300BF1CF5 /* index_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 750D6EC61D7EEE9300BF1CF5 /* index_bg@2x.png */; };
 		754A45281D7EF42D006C601C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A45271D7EF42D006C601C /* MainViewController.m */; };
 		754A452A1D7EF45B006C601C /* main_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 754A45291D7EF45B006C601C /* main_bg@2x.png */; };
+		757414871D7FC8EB001917B1 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757414861D7FC8EB001917B1 /* VideoViewController.m */; };
+		7574148A1D7FC9D5001917B1 /* 00.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 757414891D7FC9D5001917B1 /* 00.MP4 */; };
 		75A3CE031D7F213500D7C1FA /* BrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A3CE021D7F213500D7C1FA /* BrandViewController.m */; };
 		75A3CE081D7F320B00D7C1FA /* brand_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE071D7F320B00D7C1FA /* brand_bg@2x.png */; };
 		75A3CE0B1D7F33DD00D7C1FA /* BrandEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A3CE0A1D7F33DD00D7C1FA /* BrandEstateViewController.m */; };
@@ -72,6 +74,9 @@
 		754A45261D7EF42D006C601C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controller/MainViewController.h; sourceTree = "<group>"; };
 		754A45271D7EF42D006C601C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controller/MainViewController.m; sourceTree = "<group>"; };
 		754A45291D7EF45B006C601C /* main_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main_bg@2x.png"; path = "Image/main_bg@2x.png"; sourceTree = "<group>"; };
+		757414851D7FC8EB001917B1 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoViewController.h; path = Controller/VideoViewController.h; sourceTree = "<group>"; };
+		757414861D7FC8EB001917B1 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoViewController.m; path = Controller/VideoViewController.m; sourceTree = "<group>"; };
+		757414891D7FC9D5001917B1 /* 00.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = 00.MP4; path = Video/00.MP4; sourceTree = "<group>"; };
 		75A3CE011D7F213500D7C1FA /* BrandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrandViewController.h; path = Controller/BrandViewController.h; sourceTree = "<group>"; };
 		75A3CE021D7F213500D7C1FA /* BrandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrandViewController.m; path = Controller/BrandViewController.m; sourceTree = "<group>"; };
 		75A3CE071D7F320B00D7C1FA /* brand_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brand_bg@2x.png"; path = "Image/brand_bg@2x.png"; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 				750D6EC31D7EEDF000BF1CF5 /* Image */,
 				750D6E991D7EE86B00BF1CF5 /* Info.plist */,
 				750D6E851D7EE86B00BF1CF5 /* Supporting Files */,
+				757414881D7FC9C4001917B1 /* Video */,
 			);
 			path = LuNengTaiShan_iPad;
 			sourceTree = "<group>";
@@ -213,6 +219,8 @@
 				75A3CE2A1D7F434400D7C1FA /* RegionalViewController.m */,
 				75A3CE2E1D7F43FD00D7C1FA /* ProjectViewController.h */,
 				75A3CE2F1D7F43FD00D7C1FA /* ProjectViewController.m */,
+				757414851D7FC8EB001917B1 /* VideoViewController.h */,
+				757414861D7FC8EB001917B1 /* VideoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -234,6 +242,14 @@
 				750D6EC61D7EEE9300BF1CF5 /* index_bg@2x.png */,
 			);
 			name = Image;
+			sourceTree = "<group>";
+		};
+		757414881D7FC9C4001917B1 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				757414891D7FC9D5001917B1 /* 00.MP4 */,
+			);
+			name = Video;
 			sourceTree = "<group>";
 		};
 		9F66CA71EF6CBE27D098C29A /* Frameworks */ = {
@@ -373,6 +389,7 @@
 				754A452A1D7EF45B006C601C /* main_bg@2x.png in Resources */,
 				75A3CE081D7F320B00D7C1FA /* brand_bg@2x.png in Resources */,
 				75A3CE151D7F3D5B00D7C1FA /* brand_estate_0@2x.png in Resources */,
+				7574148A1D7FC9D5001917B1 /* 00.MP4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +464,7 @@
 			files = (
 				750D6E871D7EE86B00BF1CF5 /* main.m in Sources */,
 				750D6EBF1D7EED5800BF1CF5 /* IndexViewController.m in Sources */,
+				757414871D7FC8EB001917B1 /* VideoViewController.m in Sources */,
 				75A3CE1F1D7F400D00D7C1FA /* BrandIndustryViewController.m in Sources */,
 				75A3CE241D7F416900D7C1FA /* BrandSportViewController.m in Sources */,
 				75A3CE301D7F43FD00D7C1FA /* ProjectViewController.m in Sources */,
