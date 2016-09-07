@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		268562709D140A221F53B95B /* libPods-LuNengTaiShan_iPad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E126005CAD9E862917B31C /* libPods-LuNengTaiShan_iPad.a */; };
+		750D6E871D7EE86B00BF1CF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 750D6E861D7EE86B00BF1CF5 /* main.m */; };
+		750D6E951D7EE86B00BF1CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750D6E941D7EE86B00BF1CF5 /* Assets.xcassets */; };
+		750D6EA31D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 750D6EA21D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests.m */; };
+		750D6EAE1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 750D6EAD1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests.m */; };
+		750D6EBF1D7EED5800BF1CF5 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 750D6EBE1D7EED5800BF1CF5 /* IndexViewController.m */; };
+		750D6EC21D7EED6600BF1CF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 750D6EC11D7EED6600BF1CF5 /* AppDelegate.m */; };
+		750D6EC71D7EEE9300BF1CF5 /* index_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 750D6EC61D7EEE9300BF1CF5 /* index_bg@2x.png */; };
+		754A45281D7EF42D006C601C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A45271D7EF42D006C601C /* MainViewController.m */; };
+		754A452A1D7EF45B006C601C /* main_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 754A45291D7EF45B006C601C /* main_bg@2x.png */; };
+		75A3CE031D7F213500D7C1FA /* BrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A3CE021D7F213500D7C1FA /* BrandViewController.m */; };
+		75A3CE081D7F320B00D7C1FA /* brand_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE071D7F320B00D7C1FA /* brand_bg@2x.png */; };
+		75A3CE0B1D7F33DD00D7C1FA /* BrandEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A3CE0A1D7F33DD00D7C1FA /* BrandEstateViewController.m */; };
+		75A3CE151D7F3D5B00D7C1FA /* brand_estate_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE101D7F3D5B00D7C1FA /* brand_estate_0@2x.png */; };
+		75A3CE161D7F3D5B00D7C1FA /* brand_estate_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE111D7F3D5B00D7C1FA /* brand_estate_1@2x.png */; };
+		75A3CE171D7F3D5B00D7C1FA /* brand_estate_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE121D7F3D5B00D7C1FA /* brand_estate_2@2x.png */; };
+		75A3CE181D7F3D5B00D7C1FA /* brand_estate_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE131D7F3D5B00D7C1FA /* brand_estate_3@2x.png */; };
+		75A3CE191D7F3D5B00D7C1FA /* brand_estate_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE141D7F3D5B00D7C1FA /* brand_estate_4@2x.png */; };
+		75A3CE1F1D7F400D00D7C1FA /* BrandIndustryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A3CE1E1D7F400D00D7C1FA /* BrandIndustryViewController.m */; };
+		75A3CE211D7F409300D7C1FA /* brand_industry_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE201D7F409300D7C1FA /* brand_industry_bg@2x.png */; };
+		75A3CE241D7F416900D7C1FA /* BrandSportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A3CE231D7F416900D7C1FA /* BrandSportViewController.m */; };
+		75A3CE261D7F419000D7C1FA /* brand_sport_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE251D7F419000D7C1FA /* brand_sport_bg@2x.png */; };
+		75A3CE281D7F433500D7C1FA /* regional_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE271D7F433500D7C1FA /* regional_bg@2x.png */; };
+		75A3CE2B1D7F434400D7C1FA /* RegionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A3CE2A1D7F434400D7C1FA /* RegionalViewController.m */; };
+		75A3CE2D1D7F43EB00D7C1FA /* project_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A3CE2C1D7F43EB00D7C1FA /* project_bg@2x.png */; };
+		75A3CE301D7F43FD00D7C1FA /* ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A3CE2F1D7F43FD00D7C1FA /* ProjectViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		750D6E9F1D7EE86B00BF1CF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 750D6E7A1D7EE86B00BF1CF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 750D6E811D7EE86B00BF1CF5;
+			remoteInfo = LuNengTaiShan_iPad;
+		};
+		750D6EAA1D7EE86B00BF1CF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 750D6E7A1D7EE86B00BF1CF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 750D6E811D7EE86B00BF1CF5;
+			remoteInfo = LuNengTaiShan_iPad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4DCB9A4016FE11DB8533143A /* Pods-LuNengTaiShan_iPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuNengTaiShan_iPad.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuNengTaiShan_iPad/Pods-LuNengTaiShan_iPad.release.xcconfig"; sourceTree = "<group>"; };
+		750D6E821D7EE86B00BF1CF5 /* LuNengTaiShan_iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuNengTaiShan_iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		750D6E861D7EE86B00BF1CF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		750D6E941D7EE86B00BF1CF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		750D6E991D7EE86B00BF1CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		750D6E9E1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuNengTaiShan_iPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		750D6EA21D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuNengTaiShan_iPadTests.m; sourceTree = "<group>"; };
+		750D6EA41D7EE86B00BF1CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		750D6EA91D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuNengTaiShan_iPadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		750D6EAD1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuNengTaiShan_iPadUITests.m; sourceTree = "<group>"; };
+		750D6EAF1D7EE86B00BF1CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		750D6EBD1D7EED5800BF1CF5 /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexViewController.h; path = Controller/IndexViewController.h; sourceTree = "<group>"; };
+		750D6EBE1D7EED5800BF1CF5 /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexViewController.m; path = Controller/IndexViewController.m; sourceTree = "<group>"; };
+		750D6EC01D7EED6600BF1CF5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AppDelegate/AppDelegate.h; sourceTree = "<group>"; };
+		750D6EC11D7EED6600BF1CF5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = AppDelegate/AppDelegate.m; sourceTree = "<group>"; };
+		750D6EC61D7EEE9300BF1CF5 /* index_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "index_bg@2x.png"; path = "Image/index_bg@2x.png"; sourceTree = "<group>"; };
+		754A45261D7EF42D006C601C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controller/MainViewController.h; sourceTree = "<group>"; };
+		754A45271D7EF42D006C601C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controller/MainViewController.m; sourceTree = "<group>"; };
+		754A45291D7EF45B006C601C /* main_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main_bg@2x.png"; path = "Image/main_bg@2x.png"; sourceTree = "<group>"; };
+		75A3CE011D7F213500D7C1FA /* BrandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrandViewController.h; path = Controller/BrandViewController.h; sourceTree = "<group>"; };
+		75A3CE021D7F213500D7C1FA /* BrandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrandViewController.m; path = Controller/BrandViewController.m; sourceTree = "<group>"; };
+		75A3CE071D7F320B00D7C1FA /* brand_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brand_bg@2x.png"; path = "Image/brand_bg@2x.png"; sourceTree = "<group>"; };
+		75A3CE091D7F33DD00D7C1FA /* BrandEstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrandEstateViewController.h; path = Controller/BrandEstateViewController.h; sourceTree = "<group>"; };
+		75A3CE0A1D7F33DD00D7C1FA /* BrandEstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrandEstateViewController.m; path = Controller/BrandEstateViewController.m; sourceTree = "<group>"; };
+		75A3CE101D7F3D5B00D7C1FA /* brand_estate_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brand_estate_0@2x.png"; path = "Image/brand_estate_0@2x.png"; sourceTree = "<group>"; };
+		75A3CE111D7F3D5B00D7C1FA /* brand_estate_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brand_estate_1@2x.png"; path = "Image/brand_estate_1@2x.png"; sourceTree = "<group>"; };
+		75A3CE121D7F3D5B00D7C1FA /* brand_estate_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brand_estate_2@2x.png"; path = "Image/brand_estate_2@2x.png"; sourceTree = "<group>"; };
+		75A3CE131D7F3D5B00D7C1FA /* brand_estate_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brand_estate_3@2x.png"; path = "Image/brand_estate_3@2x.png"; sourceTree = "<group>"; };
+		75A3CE141D7F3D5B00D7C1FA /* brand_estate_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brand_estate_4@2x.png"; path = "Image/brand_estate_4@2x.png"; sourceTree = "<group>"; };
+		75A3CE1D1D7F400D00D7C1FA /* BrandIndustryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrandIndustryViewController.h; path = Controller/BrandIndustryViewController.h; sourceTree = "<group>"; };
+		75A3CE1E1D7F400D00D7C1FA /* BrandIndustryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrandIndustryViewController.m; path = Controller/BrandIndustryViewController.m; sourceTree = "<group>"; };
+		75A3CE201D7F409300D7C1FA /* brand_industry_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brand_industry_bg@2x.png"; path = "Image/brand_industry_bg@2x.png"; sourceTree = "<group>"; };
+		75A3CE221D7F416900D7C1FA /* BrandSportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrandSportViewController.h; path = Controller/BrandSportViewController.h; sourceTree = "<group>"; };
+		75A3CE231D7F416900D7C1FA /* BrandSportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrandSportViewController.m; path = Controller/BrandSportViewController.m; sourceTree = "<group>"; };
+		75A3CE251D7F419000D7C1FA /* brand_sport_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brand_sport_bg@2x.png"; path = "Image/brand_sport_bg@2x.png"; sourceTree = "<group>"; };
+		75A3CE271D7F433500D7C1FA /* regional_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "regional_bg@2x.png"; path = "Image/regional_bg@2x.png"; sourceTree = "<group>"; };
+		75A3CE291D7F434400D7C1FA /* RegionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegionalViewController.h; path = Controller/RegionalViewController.h; sourceTree = "<group>"; };
+		75A3CE2A1D7F434400D7C1FA /* RegionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegionalViewController.m; path = Controller/RegionalViewController.m; sourceTree = "<group>"; };
+		75A3CE2C1D7F43EB00D7C1FA /* project_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "project_bg@2x.png"; path = "Image/project_bg@2x.png"; sourceTree = "<group>"; };
+		75A3CE2E1D7F43FD00D7C1FA /* ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectViewController.h; path = Controller/ProjectViewController.h; sourceTree = "<group>"; };
+		75A3CE2F1D7F43FD00D7C1FA /* ProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectViewController.m; path = Controller/ProjectViewController.m; sourceTree = "<group>"; };
+		79E126005CAD9E862917B31C /* libPods-LuNengTaiShan_iPad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LuNengTaiShan_iPad.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8875A8237E6FF4979C4CFDEF /* Pods-LuNengTaiShan_iPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuNengTaiShan_iPad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuNengTaiShan_iPad/Pods-LuNengTaiShan_iPad.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		750D6E7F1D7EE86B00BF1CF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				268562709D140A221F53B95B /* libPods-LuNengTaiShan_iPad.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750D6E9B1D7EE86B00BF1CF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750D6EA61D7EE86B00BF1CF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		750D6E791D7EE86B00BF1CF5 = {
+			isa = PBXGroup;
+			children = (
+				750D6E841D7EE86B00BF1CF5 /* LuNengTaiShan_iPad */,
+				750D6EA11D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests */,
+				750D6EAC1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests */,
+				750D6E831D7EE86B00BF1CF5 /* Products */,
+				F4B2428872A755486FDC1A0C /* Pods */,
+				9F66CA71EF6CBE27D098C29A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		750D6E831D7EE86B00BF1CF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				750D6E821D7EE86B00BF1CF5 /* LuNengTaiShan_iPad.app */,
+				750D6E9E1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests.xctest */,
+				750D6EA91D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		750D6E841D7EE86B00BF1CF5 /* LuNengTaiShan_iPad */ = {
+			isa = PBXGroup;
+			children = (
+				750D6EBB1D7EECC900BF1CF5 /* AppDelegate */,
+				750D6E941D7EE86B00BF1CF5 /* Assets.xcassets */,
+				750D6EBC1D7EECDB00BF1CF5 /* Controller */,
+				750D6EC31D7EEDF000BF1CF5 /* Image */,
+				750D6E991D7EE86B00BF1CF5 /* Info.plist */,
+				750D6E851D7EE86B00BF1CF5 /* Supporting Files */,
+			);
+			path = LuNengTaiShan_iPad;
+			sourceTree = "<group>";
+		};
+		750D6E851D7EE86B00BF1CF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				750D6E861D7EE86B00BF1CF5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		750D6EA11D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests */ = {
+			isa = PBXGroup;
+			children = (
+				750D6EA21D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests.m */,
+				750D6EA41D7EE86B00BF1CF5 /* Info.plist */,
+			);
+			path = LuNengTaiShan_iPadTests;
+			sourceTree = "<group>";
+		};
+		750D6EAC1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests */ = {
+			isa = PBXGroup;
+			children = (
+				750D6EAD1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests.m */,
+				750D6EAF1D7EE86B00BF1CF5 /* Info.plist */,
+			);
+			path = LuNengTaiShan_iPadUITests;
+			sourceTree = "<group>";
+		};
+		750D6EBB1D7EECC900BF1CF5 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				750D6EC01D7EED6600BF1CF5 /* AppDelegate.h */,
+				750D6EC11D7EED6600BF1CF5 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		750D6EBC1D7EECDB00BF1CF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				750D6EBD1D7EED5800BF1CF5 /* IndexViewController.h */,
+				750D6EBE1D7EED5800BF1CF5 /* IndexViewController.m */,
+				754A45261D7EF42D006C601C /* MainViewController.h */,
+				754A45271D7EF42D006C601C /* MainViewController.m */,
+				75A3CE011D7F213500D7C1FA /* BrandViewController.h */,
+				75A3CE021D7F213500D7C1FA /* BrandViewController.m */,
+				75A3CE091D7F33DD00D7C1FA /* BrandEstateViewController.h */,
+				75A3CE0A1D7F33DD00D7C1FA /* BrandEstateViewController.m */,
+				75A3CE1D1D7F400D00D7C1FA /* BrandIndustryViewController.h */,
+				75A3CE1E1D7F400D00D7C1FA /* BrandIndustryViewController.m */,
+				75A3CE221D7F416900D7C1FA /* BrandSportViewController.h */,
+				75A3CE231D7F416900D7C1FA /* BrandSportViewController.m */,
+				75A3CE291D7F434400D7C1FA /* RegionalViewController.h */,
+				75A3CE2A1D7F434400D7C1FA /* RegionalViewController.m */,
+				75A3CE2E1D7F43FD00D7C1FA /* ProjectViewController.h */,
+				75A3CE2F1D7F43FD00D7C1FA /* ProjectViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		750D6EC31D7EEDF000BF1CF5 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				75A3CE2C1D7F43EB00D7C1FA /* project_bg@2x.png */,
+				75A3CE271D7F433500D7C1FA /* regional_bg@2x.png */,
+				75A3CE251D7F419000D7C1FA /* brand_sport_bg@2x.png */,
+				75A3CE201D7F409300D7C1FA /* brand_industry_bg@2x.png */,
+				75A3CE101D7F3D5B00D7C1FA /* brand_estate_0@2x.png */,
+				75A3CE111D7F3D5B00D7C1FA /* brand_estate_1@2x.png */,
+				75A3CE121D7F3D5B00D7C1FA /* brand_estate_2@2x.png */,
+				75A3CE131D7F3D5B00D7C1FA /* brand_estate_3@2x.png */,
+				75A3CE141D7F3D5B00D7C1FA /* brand_estate_4@2x.png */,
+				75A3CE071D7F320B00D7C1FA /* brand_bg@2x.png */,
+				754A45291D7EF45B006C601C /* main_bg@2x.png */,
+				750D6EC61D7EEE9300BF1CF5 /* index_bg@2x.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		9F66CA71EF6CBE27D098C29A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79E126005CAD9E862917B31C /* libPods-LuNengTaiShan_iPad.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4B2428872A755486FDC1A0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8875A8237E6FF4979C4CFDEF /* Pods-LuNengTaiShan_iPad.debug.xcconfig */,
+				4DCB9A4016FE11DB8533143A /* Pods-LuNengTaiShan_iPad.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		750D6E811D7EE86B00BF1CF5 /* LuNengTaiShan_iPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 750D6EB21D7EE86B00BF1CF5 /* Build configuration list for PBXNativeTarget "LuNengTaiShan_iPad" */;
+			buildPhases = (
+				D9C936D6A30D89D3DF096730 /* [CP] Check Pods Manifest.lock */,
+				750D6E7E1D7EE86B00BF1CF5 /* Sources */,
+				750D6E7F1D7EE86B00BF1CF5 /* Frameworks */,
+				750D6E801D7EE86B00BF1CF5 /* Resources */,
+				9E50ADE11B4FDC88479C4224 /* [CP] Embed Pods Frameworks */,
+				EF4B3CD4E5B613FA5EE63C07 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LuNengTaiShan_iPad;
+			productName = LuNengTaiShan_iPad;
+			productReference = 750D6E821D7EE86B00BF1CF5 /* LuNengTaiShan_iPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		750D6E9D1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 750D6EB51D7EE86B00BF1CF5 /* Build configuration list for PBXNativeTarget "LuNengTaiShan_iPadTests" */;
+			buildPhases = (
+				750D6E9A1D7EE86B00BF1CF5 /* Sources */,
+				750D6E9B1D7EE86B00BF1CF5 /* Frameworks */,
+				750D6E9C1D7EE86B00BF1CF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				750D6EA01D7EE86B00BF1CF5 /* PBXTargetDependency */,
+			);
+			name = LuNengTaiShan_iPadTests;
+			productName = LuNengTaiShan_iPadTests;
+			productReference = 750D6E9E1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		750D6EA81D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 750D6EB81D7EE86B00BF1CF5 /* Build configuration list for PBXNativeTarget "LuNengTaiShan_iPadUITests" */;
+			buildPhases = (
+				750D6EA51D7EE86B00BF1CF5 /* Sources */,
+				750D6EA61D7EE86B00BF1CF5 /* Frameworks */,
+				750D6EA71D7EE86B00BF1CF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				750D6EAB1D7EE86B00BF1CF5 /* PBXTargetDependency */,
+			);
+			name = LuNengTaiShan_iPadUITests;
+			productName = LuNengTaiShan_iPadUITests;
+			productReference = 750D6EA91D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		750D6E7A1D7EE86B00BF1CF5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = NowUI;
+				TargetAttributes = {
+					750D6E811D7EE86B00BF1CF5 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7A5K69VZRP;
+					};
+					750D6E9D1D7EE86B00BF1CF5 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 750D6E811D7EE86B00BF1CF5;
+					};
+					750D6EA81D7EE86B00BF1CF5 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 750D6E811D7EE86B00BF1CF5;
+					};
+				};
+			};
+			buildConfigurationList = 750D6E7D1D7EE86B00BF1CF5 /* Build configuration list for PBXProject "LuNengTaiShan_iPad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 750D6E791D7EE86B00BF1CF5;
+			productRefGroup = 750D6E831D7EE86B00BF1CF5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				750D6E811D7EE86B00BF1CF5 /* LuNengTaiShan_iPad */,
+				750D6E9D1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests */,
+				750D6EA81D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		750D6E801D7EE86B00BF1CF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75A3CE281D7F433500D7C1FA /* regional_bg@2x.png in Resources */,
+				75A3CE181D7F3D5B00D7C1FA /* brand_estate_3@2x.png in Resources */,
+				75A3CE171D7F3D5B00D7C1FA /* brand_estate_2@2x.png in Resources */,
+				75A3CE191D7F3D5B00D7C1FA /* brand_estate_4@2x.png in Resources */,
+				75A3CE2D1D7F43EB00D7C1FA /* project_bg@2x.png in Resources */,
+				75A3CE211D7F409300D7C1FA /* brand_industry_bg@2x.png in Resources */,
+				75A3CE161D7F3D5B00D7C1FA /* brand_estate_1@2x.png in Resources */,
+				75A3CE261D7F419000D7C1FA /* brand_sport_bg@2x.png in Resources */,
+				750D6EC71D7EEE9300BF1CF5 /* index_bg@2x.png in Resources */,
+				750D6E951D7EE86B00BF1CF5 /* Assets.xcassets in Resources */,
+				754A452A1D7EF45B006C601C /* main_bg@2x.png in Resources */,
+				75A3CE081D7F320B00D7C1FA /* brand_bg@2x.png in Resources */,
+				75A3CE151D7F3D5B00D7C1FA /* brand_estate_0@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750D6E9C1D7EE86B00BF1CF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750D6EA71D7EE86B00BF1CF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E50ADE11B4FDC88479C4224 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LuNengTaiShan_iPad/Pods-LuNengTaiShan_iPad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9C936D6A30D89D3DF096730 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EF4B3CD4E5B613FA5EE63C07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LuNengTaiShan_iPad/Pods-LuNengTaiShan_iPad-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		750D6E7E1D7EE86B00BF1CF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				750D6E871D7EE86B00BF1CF5 /* main.m in Sources */,
+				750D6EBF1D7EED5800BF1CF5 /* IndexViewController.m in Sources */,
+				75A3CE1F1D7F400D00D7C1FA /* BrandIndustryViewController.m in Sources */,
+				75A3CE241D7F416900D7C1FA /* BrandSportViewController.m in Sources */,
+				75A3CE301D7F43FD00D7C1FA /* ProjectViewController.m in Sources */,
+				75A3CE031D7F213500D7C1FA /* BrandViewController.m in Sources */,
+				750D6EC21D7EED6600BF1CF5 /* AppDelegate.m in Sources */,
+				75A3CE0B1D7F33DD00D7C1FA /* BrandEstateViewController.m in Sources */,
+				754A45281D7EF42D006C601C /* MainViewController.m in Sources */,
+				75A3CE2B1D7F434400D7C1FA /* RegionalViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750D6E9A1D7EE86B00BF1CF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				750D6EA31D7EE86B00BF1CF5 /* LuNengTaiShan_iPadTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750D6EA51D7EE86B00BF1CF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				750D6EAE1D7EE86B00BF1CF5 /* LuNengTaiShan_iPadUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		750D6EA01D7EE86B00BF1CF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 750D6E811D7EE86B00BF1CF5 /* LuNengTaiShan_iPad */;
+			targetProxy = 750D6E9F1D7EE86B00BF1CF5 /* PBXContainerItemProxy */;
+		};
+		750D6EAB1D7EE86B00BF1CF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 750D6E811D7EE86B00BF1CF5 /* LuNengTaiShan_iPad */;
+			targetProxy = 750D6EAA1D7EE86B00BF1CF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		750D6EB01D7EE86B00BF1CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		750D6EB11D7EE86B00BF1CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		750D6EB31D7EE86B00BF1CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8875A8237E6FF4979C4CFDEF /* Pods-LuNengTaiShan_iPad.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = LuNengTaiShan_iPad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nowui.LuNengTaiShan-iPad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		750D6EB41D7EE86B00BF1CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DCB9A4016FE11DB8533143A /* Pods-LuNengTaiShan_iPad.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = LuNengTaiShan_iPad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nowui.LuNengTaiShan-iPad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		750D6EB61D7EE86B00BF1CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LuNengTaiShan_iPadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nowui.LuNengTaiShan-iPadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LuNengTaiShan_iPad.app/LuNengTaiShan_iPad";
+			};
+			name = Debug;
+		};
+		750D6EB71D7EE86B00BF1CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LuNengTaiShan_iPadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nowui.LuNengTaiShan-iPadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LuNengTaiShan_iPad.app/LuNengTaiShan_iPad";
+			};
+			name = Release;
+		};
+		750D6EB91D7EE86B00BF1CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LuNengTaiShan_iPadUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nowui.LuNengTaiShan-iPadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LuNengTaiShan_iPad;
+			};
+			name = Debug;
+		};
+		750D6EBA1D7EE86B00BF1CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LuNengTaiShan_iPadUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nowui.LuNengTaiShan-iPadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LuNengTaiShan_iPad;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		750D6E7D1D7EE86B00BF1CF5 /* Build configuration list for PBXProject "LuNengTaiShan_iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				750D6EB01D7EE86B00BF1CF5 /* Debug */,
+				750D6EB11D7EE86B00BF1CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		750D6EB21D7EE86B00BF1CF5 /* Build configuration list for PBXNativeTarget "LuNengTaiShan_iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				750D6EB31D7EE86B00BF1CF5 /* Debug */,
+				750D6EB41D7EE86B00BF1CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		750D6EB51D7EE86B00BF1CF5 /* Build configuration list for PBXNativeTarget "LuNengTaiShan_iPadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				750D6EB61D7EE86B00BF1CF5 /* Debug */,
+				750D6EB71D7EE86B00BF1CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		750D6EB81D7EE86B00BF1CF5 /* Build configuration list for PBXNativeTarget "LuNengTaiShan_iPadUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				750D6EB91D7EE86B00BF1CF5 /* Debug */,
+				750D6EBA1D7EE86B00BF1CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 750D6E7A1D7EE86B00BF1CF5 /* Project object */;
+}
