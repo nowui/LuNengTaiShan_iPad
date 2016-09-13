@@ -34,7 +34,7 @@
         
         for(int i = 0; i < 3; i++) {
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(1024 * i, 0, 1024, 768)];
-            [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"project_landscape_%d.png", i]]];
+            [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"project_landscape_%d_bg.png", i]]];
             [mainScrollView addSubview:imageView];
         }
         

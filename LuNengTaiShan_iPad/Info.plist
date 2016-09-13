@@ -55,5 +55,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>CFBundleDisplayName</key>
+	<string>鲁能泰山7号</string>
 </dict>
 </plist>

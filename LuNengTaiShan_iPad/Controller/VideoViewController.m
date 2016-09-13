@@ -30,7 +30,16 @@
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         transition.type = kCATransitionFade;
         
-        playerView = [[GUIPlayerView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [backgroundImageView setImage:[UIImage imageNamed:@"video_bg.png"]];
+        [self.view addSubview:backgroundImageView];
+        
+        UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [closButton setFrame:CGRectMake(946, 21, 50, 50)];
+        [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:closButton];
+        
+        playerView = [[GUIPlayerView alloc] initWithFrame:CGRectMake(256, 192, 512, 384)];
         [playerView setDelegate:self];
         [playerView setVideoURL:[[NSBundle mainBundle] URLForResource:@"00" withExtension:@"MP4"]];
         [playerView prepareAndPlayAutomatically:YES];
@@ -38,20 +47,14 @@
         
         for(UIView *view in playerView.subviews) {
             if([view isKindOfClass:[UIView class]]) {
-                [view setHidden:YES];
+                //[view setHidden:YES];
             }
         }
-        
-        UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [doneButton setFrame:CGRectMake(1024 - 80, 30 ,80, 30)];
-        [doneButton addTarget:self action:@selector(clickDoneButton:) forControlEvents:UIControlEventTouchUpInside];
-        [doneButton setTitle:NSLocalizedString(@"关闭", nil) forState:UIControlStateNormal];
-        [self.view addSubview:doneButton];
     }
     return self;
 }
 
-- (void)clickDoneButton:(id)sender {
+- (void)clickCloseButton:(id)sender {
     [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
     [self.navigationController popViewControllerAnimated:NO];
 }

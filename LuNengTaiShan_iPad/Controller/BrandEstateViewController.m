@@ -8,6 +8,7 @@
 
 #import "BrandEstateViewController.h"
 #import "BrandEstate2View.h"
+#import "BrandEstate3View.h"
 
 @interface BrandEstateViewController () <UIScrollViewDelegate> {
     CATransition *transition;
@@ -33,16 +34,20 @@
         [mainScrollView setPagingEnabled:YES];
         [self.view addSubview:mainScrollView];
         
+        BrandEstate2View *brandEstate2View = [[BrandEstate2View alloc] initWithFrame:CGRectMake(1024 * 2, 0, 1024, 768)];
+        [mainScrollView addSubview:brandEstate2View];
+        
+        BrandEstate3View *brandEstate3View = [[BrandEstate3View alloc] initWithFrame:CGRectMake(1024 * 3, 0, 1024, 768)];
+        [mainScrollView addSubview:brandEstate3View];
+        
         for(int i = 0; i < 5; i++) {
-            if(i == 2) {
-                BrandEstate2View *brandEstate2View = [[BrandEstate2View alloc] initWithFrame:CGRectMake(1024 * i, 0, 1024, 768)];
-                [mainScrollView addSubview:brandEstate2View];
+            if(i == 2 || i == 3) {
             } else {
                 UIView *view = [[UIView alloc] initWithFrame:CGRectMake(1024 * i, 0, 1024, 768)];
                 [mainScrollView addSubview:view];
                 
                 UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
-                [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brand_estate_%d.png", i]]];
+                [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brand_estate_%d_bg.png", i]]];
                 [view addSubview:imageView];
             }
         }

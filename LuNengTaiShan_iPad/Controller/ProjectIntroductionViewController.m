@@ -7,6 +7,9 @@
 //
 
 #import "ProjectIntroductionViewController.h"
+#import "ProjectIntroductionSportsParkViewController.h"
+#import "ProjectIntroductionPlanningViewController.h"
+#import "ProjectIntroductionBusinessViewController.h"
 
 @interface ProjectIntroductionViewController () {
     CATransition *transition;
@@ -37,6 +40,24 @@
         [closButton setFrame:CGRectMake(962, 15, 40, 40)];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
+        
+        UIButton *menuItem0Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem0Button setTag:0];
+        [menuItem0Button setFrame:CGRectMake(91, 558, 145, 38)];
+        [menuItem0Button addTarget:self action:@selector(clickSportsParkButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuItem0Button];
+        
+        UIButton *menuItem1Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem1Button setTag:1];
+        [menuItem1Button setFrame:CGRectMake(457, 514, 145, 38)];
+        [menuItem1Button addTarget:self action:@selector(clickPlanningButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuItem1Button];
+        
+        UIButton *menuItem2Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem2Button setTag:2];
+        [menuItem2Button setFrame:CGRectMake(664, 448, 145, 38)];
+        [menuItem2Button addTarget:self action:@selector(clickBusinessButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuItem2Button];
     }
     return self;
 }
@@ -49,6 +70,24 @@
 - (void)clickCloseButton:(id)sender {
     [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
     [self.navigationController popViewControllerAnimated:NO];
+}
+
+- (void)clickSportsParkButton:(id)sender {
+    ProjectIntroductionSportsParkViewController *projectIntroductionSportsParkViewController = [[ProjectIntroductionSportsParkViewController alloc] init];
+    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+    [[self navigationController] pushViewController:projectIntroductionSportsParkViewController animated:NO];
+}
+
+- (void)clickPlanningButton:(id)sender {
+    ProjectIntroductionPlanningViewController *projectIntroductionPlanningViewController = [[ProjectIntroductionPlanningViewController alloc] init];
+    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+    [[self navigationController] pushViewController:projectIntroductionPlanningViewController animated:NO];
+}
+
+- (void)clickBusinessButton:(id)sender {
+    ProjectIntroductionBusinessViewController *projectIntroductionBusinessViewController = [[ProjectIntroductionBusinessViewController alloc] init];
+    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+    [[self navigationController] pushViewController:projectIntroductionBusinessViewController animated:NO];
 }
 
 - (void)viewDidLoad {

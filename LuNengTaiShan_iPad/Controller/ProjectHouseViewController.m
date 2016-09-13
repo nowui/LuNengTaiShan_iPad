@@ -7,9 +7,12 @@
 //
 
 #import "ProjectHouseViewController.h"
+#import "ProjectHouseTypeViewController.h"
 
 @interface ProjectHouseViewController () {
     CATransition *transition;
+    UIImageView *backgroundImageView;
+    int selectIndex;
 }
 
 @end
@@ -19,12 +22,14 @@
 - (id)init {
     self = [super init];
     if (self) {
+        selectIndex = -1;
+        
         transition = [CATransition animation];
         transition.duration = 0.3f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         transition.type = kCATransitionFade;
         
-        UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [backgroundImageView setImage:[UIImage imageNamed:@"project_house_bg.png"]];
         [self.view addSubview:backgroundImageView];
         
@@ -37,6 +42,30 @@
         [closButton setFrame:CGRectMake(962, 15, 40, 40)];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
+        
+        UIButton *menuItem0Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem0Button setTag:0];
+        [menuItem0Button setFrame:CGRectMake(46, 694, 90, 33)];
+        [menuItem0Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuItem0Button];
+        
+        UIButton *menuItem1Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem1Button setTag:1];
+        [menuItem1Button setFrame:CGRectMake(148, 694, 90, 33)];
+        [menuItem1Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuItem1Button];
+        
+        UIButton *menuItem2Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem2Button setTag:2];
+        [menuItem2Button setFrame:CGRectMake(251, 694, 90, 33)];
+        [menuItem2Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuItem2Button];
+        
+        UIButton *menuItem3Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem3Button setTag:3];
+        [menuItem3Button setFrame:CGRectMake(354, 694, 90, 33)];
+        [menuItem3Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuItem3Button];
     }
     return self;
 }
@@ -49,6 +78,32 @@
 - (void)clickCloseButton:(id)sender {
     [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
     [self.navigationController popViewControllerAnimated:NO];
+}
+
+- (void)cickSubMemuItemButton:(id)sender {
+    int tag = (int) ((UIButton *)sender).tag;
+    
+    if(selectIndex == tag) {
+        selectIndex = -1;
+        
+        [backgroundImageView setImage:[UIImage imageNamed:@"project_house_bg.png"]];
+    } else {
+        selectIndex = tag;
+        
+        [backgroundImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"project_house_%d_bg.png", selectIndex]]];
+        
+        [self performSelector:@selector(pushView) withObject:nil afterDelay:0.5f];
+    }
+}
+
+- (void)pushView {
+    ProjectHouseTypeViewController *projectHouseTypeViewController = [[ProjectHouseTypeViewController alloc] initWithFatherIndex:selectIndex];
+    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+    [[self navigationController] pushViewController:projectHouseTypeViewController animated:NO];
+    
+    selectIndex = -1;
+    
+    [backgroundImageView setImage:[UIImage imageNamed:@"project_house_bg.png"]];
 }
 
 - (void)viewDidLoad {
