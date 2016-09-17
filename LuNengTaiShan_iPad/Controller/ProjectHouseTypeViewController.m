@@ -79,9 +79,13 @@
         
         UIButton *menuItem2Button = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuItem2Button setTag:2];
-        [menuItem2Button setFrame:CGRectMake(365, 688, 126, 3868)];
+        [menuItem2Button setFrame:CGRectMake(365, 688, 126, 386)];
         [menuItem2Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menuItem2Button];
+        
+        UIView *view  = [[UIView alloc] initWithFrame:CGRectMake(360, 688, 130, 390)];
+        [view setBackgroundColor:[UIColor whiteColor]];
+        [self.view addSubview:view];
     }
     return self;
 }

@@ -63,7 +63,7 @@
         [menu2ImageView setImage:[UIImage imageNamed:@"main_menu_2.png"]];
         [self.view addSubview:menu2ImageView];
         
-        videoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(1031, 507, 71, 106)];
+        videoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(1031, 509, 71, 106)];
         [videoImageView setAlpha:0.0];
         [videoImageView setImage:[UIImage imageNamed:@"main_video.png"]];
         [self.view addSubview:videoImageView];

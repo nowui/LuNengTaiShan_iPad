@@ -57,5 +57,7 @@
 	<false/>
 	<key>CFBundleDisplayName</key>
 	<string>鲁能泰山7号</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 </dict>
 </plist>
