@@ -8,7 +8,7 @@
 
 #import "ProjectIntroductionPlanningViewController.h"
 
-@interface ProjectIntroductionPlanningViewController () {
+@interface ProjectIntroductionPlanningViewController () <UIScrollViewDelegate> {
     CATransition *transition;
     UIImageView *backgroundImageView;
     int selectIndex;
@@ -28,31 +28,47 @@
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         transition.type = kCATransitionFade;
         
+        UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [mainScrollView setDelegate:self];
+        [mainScrollView setContentSize:CGSizeMake(1024 * 6, 768)];
+        [mainScrollView setShowsHorizontalScrollIndicator:NO];
+        [mainScrollView setShowsVerticalScrollIndicator:NO];
+        [mainScrollView setPagingEnabled:YES];
+        [self.view addSubview:mainScrollView];
+        
         backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [backgroundImageView setImage:[UIImage imageNamed:@"project_introduction_planning_bg.png"]];
-        [self.view addSubview:backgroundImageView];
-        
-        UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuButton setFrame:CGRectMake(923, 15, 40, 40)];
-        [menuButton addTarget:self action:@selector(clickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:menuButton];
-        
-        UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [closButton setFrame:CGRectMake(962, 15, 40, 40)];
-        [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:closButton];
+        [mainScrollView addSubview:backgroundImageView];
         
         UIButton *menuItem0Button = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuItem0Button setTag:0];
         [menuItem0Button setFrame:CGRectMake(382, 265, 50, 50)];
         [menuItem0Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:menuItem0Button];
+        [mainScrollView addSubview:menuItem0Button];
         
         UIButton *menuItem1Button = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuItem1Button setTag:1];
         [menuItem1Button setFrame:CGRectMake(704, 478, 50, 50)];
         [menuItem1Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:menuItem1Button];
+        [mainScrollView addSubview:menuItem1Button];
+        
+        UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuButton setFrame:CGRectMake(923, 15, 50, 50)];
+        [menuButton setImage:[UIImage imageNamed:@"button_menu.png"] forState:UIControlStateNormal];
+        [menuButton addTarget:self action:@selector(clickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuButton];
+        
+        UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [closButton setFrame:CGRectMake(962, 15, 50, 50)];
+        [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
+        [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:closButton];
+        
+        for(int i = 1; i < 6; i++) {
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(1024 * i, 0, 1024, 768)];
+            [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"project_introduction_planning_content_%d_bg.png", i]]];
+            [mainScrollView addSubview:imageView];
+        }
     }
     return self;
 }

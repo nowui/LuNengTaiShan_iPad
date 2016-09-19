@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "BrandViewController.h"
-#import "RegionalViewController.h"
+#import "RegionalTrafficViewController.h"
 #import "ProjectViewController.h"
 #import "VideoViewController.h"
 
@@ -171,9 +171,9 @@
 }
 
 - (void)clickRegionalButton:(id)sender {
-    RegionalViewController *regionalViewController = [[RegionalViewController alloc] init];
+    RegionalTrafficViewController *regionalTrafficViewController = [[RegionalTrafficViewController alloc] init];
     [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
-    [[self navigationController] pushViewController:regionalViewController animated:NO];
+    [[self navigationController] pushViewController:regionalTrafficViewController animated:NO];
 }
 
 - (void)clickProjectButton:(id)sender {

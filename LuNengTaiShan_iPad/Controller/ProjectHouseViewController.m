@@ -34,12 +34,14 @@
         [self.view addSubview:backgroundImageView];
         
         UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuButton setFrame:CGRectMake(923, 15, 40, 40)];
+        [menuButton setFrame:CGRectMake(923, 15, 50, 50)];
+        [menuButton setImage:[UIImage imageNamed:@"button_menu.png"] forState:UIControlStateNormal];
         [menuButton addTarget:self action:@selector(clickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menuButton];
         
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [closButton setFrame:CGRectMake(962, 15, 40, 40)];
+        [closButton setFrame:CGRectMake(962, 15, 50, 50)];
+        [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
         

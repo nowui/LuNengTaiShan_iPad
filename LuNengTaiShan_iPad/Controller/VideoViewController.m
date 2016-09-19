@@ -36,12 +36,13 @@
         
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [closButton setFrame:CGRectMake(946, 21, 50, 50)];
+        [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
         
-        playerView = [[GUIPlayerView alloc] initWithFrame:CGRectMake(256, 192, 512, 384)];
+        playerView = [[GUIPlayerView alloc] initWithFrame:CGRectMake(62, 48, 900, 675)];
         [playerView setDelegate:self];
-        [playerView setVideoURL:[[NSBundle mainBundle] URLForResource:@"00" withExtension:@"MP4"]];
+        [playerView setVideoURL:[[NSBundle mainBundle] URLForResource:@"sport" withExtension:@"mp4"]];
         [playerView prepareAndPlayAutomatically:YES];
         [self.view addSubview:playerView];
         

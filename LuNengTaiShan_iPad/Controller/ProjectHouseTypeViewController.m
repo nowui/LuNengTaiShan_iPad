@@ -56,12 +56,14 @@
         [self.view addSubview:backgroundImageView];
         
         UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuButton setFrame:CGRectMake(923, 15, 40, 40)];
+        [menuButton setFrame:CGRectMake(923, 15, 50, 50)];
+        [menuButton setImage:[UIImage imageNamed:@"button_menu.png"] forState:UIControlStateNormal];
         [menuButton addTarget:self action:@selector(clickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menuButton];
         
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [closButton setFrame:CGRectMake(962, 15, 40, 40)];
+        [closButton setFrame:CGRectMake(962, 15, 50, 50)];
+        [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
         
@@ -82,10 +84,6 @@
         [menuItem2Button setFrame:CGRectMake(365, 688, 126, 386)];
         [menuItem2Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menuItem2Button];
-        
-        UIView *view  = [[UIView alloc] initWithFrame:CGRectMake(360, 688, 130, 390)];
-        [view setBackgroundColor:[UIColor whiteColor]];
-        [self.view addSubview:view];
     }
     return self;
 }
@@ -128,18 +126,18 @@
     CGPoint currentPoint = [touch locationInView:self.view];
     
     if(currentPoint.x < point.x) {
-        countIndex++;
+        countIndex += point.x - currentPoint.x;
         
-        if(countIndex > 298) {
+        if(countIndex > 300) {
             countIndex = 0;
         }
         
         [typeImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_%.5d.png", name, countIndex]]];
     } else if(currentPoint.x > point.x) {
-        countIndex--;
+        countIndex -= currentPoint.x - point.x;
         
         if(countIndex < 0) {
-            countIndex = 298;
+            countIndex = 300;
         }
         
         [typeImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_%.5d.png", name, countIndex]]];

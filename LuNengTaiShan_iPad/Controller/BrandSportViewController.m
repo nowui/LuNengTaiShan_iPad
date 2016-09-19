@@ -7,14 +7,20 @@
 //
 
 #import "BrandSportViewController.h"
+#import "GUIPlayerView.h"
 
-@interface BrandSportViewController () {
+@interface BrandSportViewController () <GUIPlayerViewDelegate> {
+    GUIPlayerView *playerView;
     CATransition *transition;
 }
 
 @end
 
 @implementation BrandSportViewController
+
+- (void) dealloc {
+    [playerView clean];
+}
 
 - (id)init {
     self = [super init];
@@ -25,25 +31,22 @@
         transition.type = kCATransitionFade;
         
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
-        [backgroundImageView setImage:[UIImage imageNamed:@"brand_sport_bg.png"]];
+        [backgroundImageView setImage:[UIImage imageNamed:@"video_bg.png"]];
         [self.view addSubview:backgroundImageView];
         
-        UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuButton setFrame:CGRectMake(923, 15, 40, 40)];
-        [menuButton addTarget:self action:@selector(clickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:menuButton];
-        
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [closButton setFrame:CGRectMake(962, 15, 40, 40)];
+        [closButton setFrame:CGRectMake(946, 21, 50, 50)];
+        [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
+        
+        playerView = [[GUIPlayerView alloc] initWithFrame:CGRectMake(62, 48, 900, 675)];
+        [playerView setDelegate:self];
+        [playerView setVideoURL:[[NSBundle mainBundle] URLForResource:@"sport" withExtension:@"mp4"]];
+        [playerView prepareAndPlayAutomatically:YES];
+        [self.view addSubview:playerView];
     }
     return self;
-}
-
-- (void)clickMenuButton:(id)sender {
-    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:NO];
 }
 
 - (void)clickCloseButton:(id)sender {
