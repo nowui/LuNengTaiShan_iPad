@@ -18,7 +18,8 @@
         [self addSubview:backgroundImageView];
         
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [closButton setFrame:CGRectMake(864, 200, 40, 40)];
+        [closButton setFrame:CGRectMake(864, 200, 50, 50)];
+        [closButton setImage:[UIImage imageNamed:@"button_mask_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:closButton];
     }

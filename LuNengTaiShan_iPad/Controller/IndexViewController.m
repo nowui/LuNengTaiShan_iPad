@@ -8,6 +8,7 @@
 
 #import "IndexViewController.h"
 #import "MainViewController.h"
+#import "CalculatorView.h"
 
 @interface IndexViewController () {
     CATransition *transition;
@@ -30,9 +31,14 @@
         [self.view addSubview:backgroundImageView];
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setFrame:CGRectMake(452, 455 ,123, 50)];
+        [button setFrame:CGRectMake(452, 455, 120, 28)];
+        [button setImage:[UIImage imageNamed:@"index_button.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"index_button_active.png"] forState:UIControlStateSelected];
         [button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
+        
+        CalculatorView *calculatorView = [[CalculatorView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [self.view addSubview:calculatorView];
     }
     return self;
 }

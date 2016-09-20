@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalculatorView : UIView
+@interface CalculatorView : UIView <UIPickerViewDelegate>
 
 @end
