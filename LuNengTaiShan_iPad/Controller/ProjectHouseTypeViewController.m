@@ -7,6 +7,7 @@
 //
 
 #import "ProjectHouseTypeViewController.h"
+#import "RoamViewController.h"
 #import "CalculatorView.h"
 
 @interface ProjectHouseTypeViewController () {
@@ -18,6 +19,7 @@
     int countIndex;
     CGPoint point;
     NSString *name;
+    UIButton *roamButton;
 }
 
 @end
@@ -43,9 +45,9 @@
         }
         
         transition = [CATransition animation];
-        transition.duration = 0.3f;
+        transition.duration = 1.0f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        transition.type = kCATransitionFade;
+        transition.type = @"rippleEffect";
         
         typeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [typeImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_%.5d.png", name, countIndex]]];
@@ -84,6 +86,11 @@
         [menuItem2Button setFrame:CGRectMake(365, 688, 126, 386)];
         [menuItem2Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menuItem2Button];
+        
+        roamButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [roamButton setFrame:CGRectMake(818, 699, 90, 27)];
+        [roamButton addTarget:self action:@selector(cickRoamButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:roamButton];
     }
     return self;
 }
@@ -113,6 +120,19 @@
             [backgroundImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"project_hourse_type_%d_bg.png", selectIndex]]];
         }
         
+    }
+    
+    if(tag == 0) {
+        [roamButton setAlpha:1.0];
+    } else {
+        [roamButton setAlpha:0.0];
+    }
+}
+
+- (void)cickRoamButton:(id)sender {
+    if([name isEqual:@"B_000"]) {
+        RoamViewController *roamViewController = [[RoamViewController alloc] initWithName:@"project_hourse_type_1_720"];
+        [[self navigationController] pushViewController:roamViewController animated:NO];
     }
 }
 

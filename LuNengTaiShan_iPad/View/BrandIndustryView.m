@@ -85,8 +85,12 @@
         }
         
         backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [backgroundImageView setUserInteractionEnabled:YES];
         [backgroundImageView setImage:[UIImage imageNamed:@"brand_industry_detail_bg.png"]];
         [self addSubview:backgroundImageView];
+        
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTap:)];
+        [backgroundImageView addGestureRecognizer:tapGestureRecognizer];
         
         UIScrollView *mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(152, 137, 719, 424)];
         [mainScrollView setDelegate:self];
@@ -103,12 +107,16 @@
         }
         
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [closButton setFrame:CGRectMake(873, 138, 50, 50)];
+        [closButton setFrame:CGRectMake(871, 137, 50, 50)];
         [closButton setImage:[UIImage imageNamed:@"button_mask_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:closButton];
     }
     return self;
+}
+
+-(void)clickTap:(UITapGestureRecognizer*)recognizer {
+    [self removeFromSuperview];
 }
 
 - (void)clickCloseButton:(id)sender {

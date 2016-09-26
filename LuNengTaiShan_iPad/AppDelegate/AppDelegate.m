@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "IndexViewController.h"
+#import "RoamViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -25,6 +26,8 @@
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:indexViewController];
     [navigationController.navigationBar setHidden:YES];
+    
+    RoamViewController *mainViewController = [[RoamViewController alloc] initWithNibName:nil bundle:nil];
     
     self.window.rootViewController = navigationController;
     

@@ -8,6 +8,7 @@
 
 #import "ProjectIntroductionSportsParkViewController.h"
 #import "ProjectIntroductionSportsParkView.h"
+#import "SportParkViewController.h"
 
 @interface ProjectIntroductionSportsParkViewController () {
     CATransition *transition;
@@ -21,9 +22,9 @@
     self = [super init];
     if (self) {
         transition = [CATransition animation];
-        transition.duration = 0.3f;
+        transition.duration = 1.0f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        transition.type = kCATransitionFade;
+        transition.type = @"rippleEffect";
         
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [backgroundImageView setImage:[UIImage imageNamed:@"project_introduction_sports_park_bg.png"]];
@@ -75,8 +76,13 @@
 - (void)cickSubMemuItemButton:(id)sender {
     int tag = (int) ((UIButton *)sender).tag;
     
-    ProjectIntroductionSportsParkView *projectIntroductionSportsParkView = [[ProjectIntroductionSportsParkView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768) withIndex:tag];
-    [self.view addSubview:projectIntroductionSportsParkView];
+    if(tag == 2) {
+        SportParkViewController *sportParkViewController = [[SportParkViewController alloc] init];
+        [[self navigationController] pushViewController:sportParkViewController animated:NO];
+    } else {
+        ProjectIntroductionSportsParkView *projectIntroductionSportsParkView = [[ProjectIntroductionSportsParkView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768) withIndex:tag];
+        [self.view addSubview:projectIntroductionSportsParkView];
+    }
 }
 
 - (void)viewDidLoad {

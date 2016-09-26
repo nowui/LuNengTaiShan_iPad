@@ -26,25 +26,26 @@
     self = [super init];
     if (self) {
         transition = [CATransition animation];
-        transition.duration = 0.3f;
+        transition.duration = 1.0f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        transition.type = kCATransitionFade;
+        transition.type = @"rippleEffect";
         
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [backgroundImageView setImage:[UIImage imageNamed:@"video_bg.png"]];
         [self.view addSubview:backgroundImageView];
+        
+        playerView = [[GUIPlayerView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [playerView setDelegate:self];
+        [playerView setVideoURL:[[NSBundle mainBundle] URLForResource:@"sport" withExtension:@"mp4"]];
+        [playerView prepareAndPlayAutomatically:YES];
+        [playerView setFullscreen];
+        [self.view addSubview:playerView];
         
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [closButton setFrame:CGRectMake(946, 21, 50, 50)];
         [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
-        
-        playerView = [[GUIPlayerView alloc] initWithFrame:CGRectMake(62, 48, 900, 675)];
-        [playerView setDelegate:self];
-        [playerView setVideoURL:[[NSBundle mainBundle] URLForResource:@"sport" withExtension:@"mp4"]];
-        [playerView prepareAndPlayAutomatically:YES];
-        [self.view addSubview:playerView];
     }
     return self;
 }

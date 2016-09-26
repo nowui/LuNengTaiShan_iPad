@@ -13,6 +13,9 @@
 
 @interface ProjectViewController () {
     CATransition *transition;
+    UIButton *introductionButton;
+    UIButton *houseButton;
+    UIButton *landscapeButton;
 }
 
 @end
@@ -23,9 +26,9 @@
     self = [super init];
     if (self) {
         transition = [CATransition animation];
-        transition.duration = 0.3f;
+        transition.duration = 1.0f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        transition.type = kCATransitionFade;
+        transition.type = @"rippleEffect";
         
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [backgroundImageView setImage:[UIImage imageNamed:@"project_bg.png"]];
@@ -42,22 +45,70 @@
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
         
-        UIButton *introductionButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [introductionButton setFrame:CGRectMake(126, 319, 206, 156)];
+        introductionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [introductionButton setAlpha:0.0];
+        [introductionButton setFrame:CGRectMake(227, 302, 237, 155)];
+        [introductionButton setImage:[UIImage imageNamed:@"project_menu_0.png"] forState:UIControlStateNormal];
+        [introductionButton setImage:[UIImage imageNamed:@"project_menu_0_active.png"] forState:UIControlStateHighlighted];
         [introductionButton addTarget:self action:@selector(clickIntroductionButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:introductionButton];
         
-        UIButton *houseButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [houseButton setFrame:CGRectMake(441, 319, 148, 156)];
+        [self performSelector:@selector(showIntroduction) withObject:nil afterDelay:0.5f];
+        
+        houseButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [houseButton setAlpha:0.0];
+        [houseButton setFrame:CGRectMake(539, 302, 143, 155)];
+        [houseButton setImage:[UIImage imageNamed:@"project_menu_1.png"] forState:UIControlStateNormal];
+        [houseButton setImage:[UIImage imageNamed:@"project_menu_1_active.png"] forState:UIControlStateHighlighted];
         [houseButton addTarget:self action:@selector(clickHouseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:houseButton];
         
-        UIButton *landscapeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [landscapeButton setFrame:CGRectMake(708, 319, 148, 156)];
+        [self performSelector:@selector(showHouse) withObject:nil afterDelay:1.0f];
+        
+        landscapeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [landscapeButton setAlpha:0.0];
+        [landscapeButton setFrame:CGRectMake(809, 302, 143, 155)];
+        [landscapeButton setImage:[UIImage imageNamed:@"project_menu_2.png"] forState:UIControlStateNormal];
+        [landscapeButton setImage:[UIImage imageNamed:@"project_menu_2_active.png"] forState:UIControlStateHighlighted];
         [landscapeButton addTarget:self action:@selector(clickLandscapeButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:landscapeButton];
+        
+        [self performSelector:@selector(showLandscape) withObject:nil afterDelay:1.5f];
     }
     return self;
+}
+
+- (void)showIntroduction {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = introductionButton.frame;
+    frame.origin.x = 127;
+    [introductionButton setFrame:frame];
+    [introductionButton setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showHouse {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = houseButton.frame;
+    frame.origin.x = 439;
+    [houseButton setFrame:frame];
+    [houseButton setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showLandscape {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = landscapeButton.frame;
+    frame.origin.x = 709;
+    [landscapeButton setFrame:frame];
+    [landscapeButton setAlpha:1.0];
+    [UIView commitAnimations];
 }
 
 - (void)clickMenuButton:(id)sender {

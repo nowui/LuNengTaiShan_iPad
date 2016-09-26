@@ -14,8 +14,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [backgroundImageView setUserInteractionEnabled:YES];
         [backgroundImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"project_introduction_sports_park_%d_bg.png", index]]];
         [self addSubview:backgroundImageView];
+        
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTap:)];
+        [backgroundImageView addGestureRecognizer:tapGestureRecognizer];
         
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [closButton setFrame:CGRectMake(864, 200, 50, 50)];
@@ -24,6 +28,10 @@
         [self addSubview:closButton];
     }
     return self;
+}
+
+-(void)clickTap:(UITapGestureRecognizer*)recognizer {
+    [self removeFromSuperview];
 }
 
 - (void)clickCloseButton:(id)sender {

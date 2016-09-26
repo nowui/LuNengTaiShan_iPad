@@ -43,11 +43,11 @@
         [priceTextField addTarget:self action:@selector(didPriceTextFieldChange:)forControlEvents:UIControlEventEditingChanged];
         [self addSubview:priceTextField];
         
-        UIPickerView *ratioPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, (768 - 216), 1024, 216)];
+        /*UIPickerView *ratioPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, (768 - 216), 1024, 216)];
         [ratioPickerView setDelegate:self];
         [ratioPickerView setShowsSelectionIndicator:YES];
         [ratioPickerView setBackgroundColor:[UIColor whiteColor]];
-        [self addSubview:ratioPickerView];
+        [self addSubview:ratioPickerView];*/
         
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [closButton setFrame:CGRectMake(962, 15, 50, 50)];

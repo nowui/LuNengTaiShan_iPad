@@ -13,6 +13,9 @@
 
 @interface BrandViewController () {
     CATransition *transition;
+    UIButton *estateButton;
+    UIButton *industryButton;
+    UIButton *sportButton;
 }
 
 @end
@@ -23,9 +26,9 @@
     self = [super init];
     if (self) {
         transition = [CATransition animation];
-        transition.duration = 0.3f;
+        transition.duration = 1.0f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        transition.type = kCATransitionFade;
+        transition.type = @"rippleEffect";
         
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [backgroundImageView setImage:[UIImage imageNamed:@"brand_bg.png"]];
@@ -42,22 +45,70 @@
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
         
-        UIButton *estateButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [estateButton setFrame:CGRectMake(135, 319, 189, 156)];
+        estateButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [estateButton setAlpha:0.0];
+        [estateButton setFrame:CGRectMake(242, 320, 208, 154)];
+        [estateButton setImage:[UIImage imageNamed:@"brand_menu_0.png"] forState:UIControlStateNormal];
+        [estateButton setImage:[UIImage imageNamed:@"brand_menu_0_active.png"] forState:UIControlStateHighlighted];
         [estateButton addTarget:self action:@selector(clickEstateButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:estateButton];
         
-        UIButton *industryButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [industryButton setFrame:CGRectMake(397, 319, 204, 156)];
+        [self performSelector:@selector(showEstate) withObject:nil afterDelay:0.5f];
+        
+        industryButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [industryButton setAlpha:0.0];
+        [industryButton setFrame:CGRectMake(498, 320, 235, 154)];
+        [industryButton setImage:[UIImage imageNamed:@"brand_menu_1.png"] forState:UIControlStateNormal];
+        [industryButton setImage:[UIImage imageNamed:@"brand_menu_1_active.png"] forState:UIControlStateHighlighted];
         [industryButton addTarget:self action:@selector(clickIndustryButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:industryButton];
         
-        UIButton *sportButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [sportButton setFrame:CGRectMake(702, 319, 163, 156)];
+        [self performSelector:@selector(showIndustry) withObject:nil afterDelay:1.0f];
+        
+        sportButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [sportButton setAlpha:0.0];
+        [sportButton setFrame:CGRectMake(805, 320, 155, 154)];
+        [sportButton setImage:[UIImage imageNamed:@"brand_menu_2.png"] forState:UIControlStateNormal];
+        [sportButton setImage:[UIImage imageNamed:@"brand_menu_2_active.png"] forState:UIControlStateHighlighted];
         [sportButton addTarget:self action:@selector(clickSportButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:sportButton];
+        
+        [self performSelector:@selector(showSport) withObject:nil afterDelay:1.5f];
     }
     return self;
+}
+
+- (void)showEstate {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = estateButton.frame;
+    frame.origin.x = 142;
+    [estateButton setFrame:frame];
+    [estateButton setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showIndustry {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = industryButton.frame;
+    frame.origin.x = 398;
+    [industryButton setFrame:frame];
+    [industryButton setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showSport {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = sportButton.frame;
+    frame.origin.x = 705;
+    [sportButton setFrame:frame];
+    [sportButton setAlpha:1.0];
+    [UIView commitAnimations];
 }
 
 - (void)clickMenuButton:(id)sender {

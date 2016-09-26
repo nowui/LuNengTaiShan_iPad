@@ -29,9 +29,9 @@
         selectIndex = 0;
         
         transition = [CATransition animation];
-        transition.duration = 0.3f;
+        transition.duration = 1.0f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        transition.type = kCATransitionFade;
+        transition.type = @"rippleEffect";
         
         backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [backgroundImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brand_industry_%d_bg.png", selectIndex]]];

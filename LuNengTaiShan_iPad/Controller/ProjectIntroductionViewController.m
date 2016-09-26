@@ -13,6 +13,10 @@
 
 @interface ProjectIntroductionViewController () {
     CATransition *transition;
+    UIImageView *maskImageView;
+    UIButton *menuItem0Button;
+    UIButton *menuItem1Button;
+    UIButton *menuItem2Button;
 }
 
 @end
@@ -23,13 +27,45 @@
     self = [super init];
     if (self) {
         transition = [CATransition animation];
-        transition.duration = 0.3f;
+        transition.duration = 1.0f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        transition.type = kCATransitionFade;
+        transition.type = @"rippleEffect";
         
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [backgroundImageView setImage:[UIImage imageNamed:@"project_introduction_bg.png"]];
         [self.view addSubview:backgroundImageView];
+        
+        menuItem0Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem0Button setTag:0];
+        [menuItem0Button setAlpha:0.0];
+        [menuItem0Button setFrame:CGRectMake(189, 558, 142, 46)];
+        [menuItem0Button setImage:[UIImage imageNamed:@"project_introduction_menu_0.png"] forState:UIControlStateNormal];
+        [menuItem0Button addTarget:self action:@selector(clickSportsParkButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuItem0Button];
+        
+        menuItem1Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem1Button setTag:1];
+        [menuItem1Button setAlpha:0.0];
+        [menuItem1Button setFrame:CGRectMake(555, 514, 142, 46)];
+        [menuItem1Button setImage:[UIImage imageNamed:@"project_introduction_menu_1.png"] forState:UIControlStateNormal];
+        [menuItem1Button addTarget:self action:@selector(clickPlanningButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuItem1Button];
+        
+        menuItem2Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem2Button setTag:2];
+        [menuItem2Button setAlpha:0.0];
+        [menuItem2Button setFrame:CGRectMake(765, 448, 99, 46)];
+        [menuItem2Button setImage:[UIImage imageNamed:@"project_introduction_menu_2.png"] forState:UIControlStateNormal];
+        [menuItem2Button addTarget:self action:@selector(clickBusinessButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:menuItem2Button];
+        
+        maskImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [maskImageView setUserInteractionEnabled:YES];
+        [maskImageView setImage:[UIImage imageNamed:@"project_introduction_mask.png"]];
+        [self.view addSubview:maskImageView];
+        
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTap:)];
+        [maskImageView addGestureRecognizer:tapGestureRecognizer];
         
         UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuButton setFrame:CGRectMake(923, 15, 50, 50)];
@@ -42,26 +78,51 @@
         [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
-        
-        UIButton *menuItem0Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuItem0Button setTag:0];
-        [menuItem0Button setFrame:CGRectMake(91, 558, 145, 38)];
-        [menuItem0Button addTarget:self action:@selector(clickSportsParkButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:menuItem0Button];
-        
-        UIButton *menuItem1Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuItem1Button setTag:1];
-        [menuItem1Button setFrame:CGRectMake(457, 514, 145, 38)];
-        [menuItem1Button addTarget:self action:@selector(clickPlanningButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:menuItem1Button];
-        
-        UIButton *menuItem2Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuItem2Button setTag:2];
-        [menuItem2Button setFrame:CGRectMake(664, 448, 145, 38)];
-        [menuItem2Button addTarget:self action:@selector(clickBusinessButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:menuItem2Button];
     }
     return self;
+}
+
+- (void)showMenu0 {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = menuItem0Button.frame;
+    frame.origin.x = 89;
+    [menuItem0Button setFrame:frame];
+    [menuItem0Button setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showMenu1 {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = menuItem1Button.frame;
+    frame.origin.x = 455;
+    [menuItem1Button setFrame:frame];
+    [menuItem1Button setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showMenu2 {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = menuItem2Button.frame;
+    frame.origin.x = 665;
+    [menuItem2Button setFrame:frame];
+    [menuItem2Button setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+-(void)clickTap:(UITapGestureRecognizer*)recognizer {
+    [maskImageView removeFromSuperview];
+    
+    [self performSelector:@selector(showMenu0) withObject:nil afterDelay:0.0f];
+    
+    [self performSelector:@selector(showMenu1) withObject:nil afterDelay:0.5f];
+    
+    [self performSelector:@selector(showMenu2) withObject:nil afterDelay:1.0f];
 }
 
 - (void)clickMenuButton:(id)sender {
