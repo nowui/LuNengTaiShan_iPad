@@ -8,6 +8,12 @@
 
 #import "ProjectIntroductionSportsParkView.h"
 
+@interface ProjectIntroductionSportsParkView () {
+    
+}
+
+@end
+
 @implementation ProjectIntroductionSportsParkView
 
 - (id)initWithFrame:(CGRect)frame withIndex:(int)index {
@@ -22,19 +28,40 @@
         [backgroundImageView addGestureRecognizer:tapGestureRecognizer];
         
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [closButton setFrame:CGRectMake(864, 200, 50, 50)];
+        [closButton setFrame:CGRectMake(916, 158, 50, 50)];
         [closButton setImage:[UIImage imageNamed:@"button_mask_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:closButton];
+        
+        [self setAlpha:0.0];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.5f];
+        [UIView setAnimationDelegate:self];
+        [self setAlpha:1.0];
+        [UIView commitAnimations];
     }
     return self;
 }
 
 -(void)clickTap:(UITapGestureRecognizer*)recognizer {
-    [self removeFromSuperview];
+    [self hide];
 }
 
 - (void)clickCloseButton:(id)sender {
+    [self hide];
+}
+
+- (void)hide {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    [self setAlpha:0.0];
+    [UIView setAnimationDidStopSelector:@selector(remove)];
+    [UIView commitAnimations];
+}
+
+- (void)remove {
     [self removeFromSuperview];
 }
 

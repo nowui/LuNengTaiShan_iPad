@@ -36,7 +36,7 @@
         
         playerView = [[GUIPlayerView alloc] initWithFrame:CGRectMake(256, 192, 512, 384)];
         [playerView setDelegate:self];
-        [playerView setVideoURL:[[NSBundle mainBundle] URLForResource:@"sport" withExtension:@"mp4"]];
+        [playerView setVideoURL:[[NSBundle mainBundle] URLForResource:@"video" withExtension:@"mov"]];
         [playerView prepareAndPlayAutomatically:YES];
         [playerView setFullscreen];
         [self.view addSubview:playerView];

@@ -10,6 +10,7 @@
 
 @interface RegionalTrafficView () <UIScrollViewDelegate> {
     UIImageView *backgroundImageView;
+    UIPageControl *pageControl;
     int selectIndex;
 }
 
@@ -36,7 +37,7 @@
             } else if(index == 4) {
                 total = 1;
             } else if(index == 5) {
-                total = 2;
+                total = 1;
             }
         } else if(fatherIndex == 1) {
             if(index == 0) {
@@ -92,19 +93,58 @@
         
         UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [closButton setFrame:CGRectMake(870, 133, 50, 50)];
-        [closButton setImage:[UIImage imageNamed:@"button_mask_close.png"] forState:UIControlStateNormal];
+        [closButton setImage:[UIImage imageNamed:@"button_mask_close_2.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:closButton];
+        
+        if(total > 1) {
+            pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 575, 1024, 30)];
+            [pageControl setNumberOfPages:total];
+            [pageControl setCurrentPage:0];
+            [pageControl setCurrentPageIndicatorTintColor:[UIColor blueColor]];
+            [pageControl setPageIndicatorTintColor:[UIColor blackColor]];
+            [pageControl setUserInteractionEnabled:NO];
+            [pageControl setValue:[UIImage imageNamed:@"icon_5.png"] forKey:@"pageImage"];
+            [pageControl setValue:[UIImage imageNamed:@"icon_4.png"] forKey:@"currentPageImage"];
+            [self addSubview:pageControl];
+        }
+        
+        [self setAlpha:0.0];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.5f];
+        [UIView setAnimationDelegate:self];
+        [self setAlpha:1.0];
+        [UIView commitAnimations];
     }
     return self;
 }
 
 -(void)clickTap:(UITapGestureRecognizer*)recognizer {
-    [self removeFromSuperview];
+    [self hide];
 }
 
 - (void)clickCloseButton:(id)sender {
+    [self hide];
+}
+
+- (void)hide {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    [self setAlpha:0.0];
+    [UIView setAnimationDidStopSelector:@selector(remove)];
+    [UIView commitAnimations];
+}
+
+- (void)remove {
     [self removeFromSuperview];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    int index = scrollView.contentOffset.x / scrollView.frame.size.width;
+    
+    [pageControl setCurrentPage:index];
 }
 
 @end

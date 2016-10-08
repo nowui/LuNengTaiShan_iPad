@@ -10,6 +10,8 @@
 
 @interface ProjectIntroductionBusinessViewController () {
     CATransition *transition;
+    UIImageView *titleImageView;
+    UIImageView *textImageView;
 }
 
 @end
@@ -28,6 +30,16 @@
         [backgroundImageView setImage:[UIImage imageNamed:@"project_introduction_business_bg.png"]];
         [self.view addSubview:backgroundImageView];
         
+        titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(69, 583, 151, 73)];
+        [titleImageView setAlpha:0.0];
+        [titleImageView setImage:[UIImage imageNamed:@"project_introduction_business_title.png"]];
+        [self.view addSubview:titleImageView];
+        
+        textImageView = [[UIImageView alloc] initWithFrame:CGRectMake(169, 672, 586, 35)];
+        [textImageView setAlpha:0.0];
+        [textImageView setImage:[UIImage imageNamed:@"project_introduction_business_text.png"]];
+        [self.view addSubview:textImageView];
+        
         UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuButton setFrame:CGRectMake(923, 15, 50, 50)];
         [menuButton setImage:[UIImage imageNamed:@"button_menu.png"] forState:UIControlStateNormal];
@@ -39,8 +51,31 @@
         [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
+        
+        [self performSelector:@selector(showTitle) withObject:nil afterDelay:0.5f];
+        
+        [self performSelector:@selector(showText) withObject:nil afterDelay:1.0f];
     }
     return self;
+}
+
+- (void)showTitle {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    [titleImageView setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showText {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = textImageView.frame;
+    frame.origin.x = 69;
+    [textImageView setFrame:frame];
+    [textImageView setAlpha:1.0];
+    [UIView commitAnimations];
 }
 
 - (void)clickMenuButton:(id)sender {

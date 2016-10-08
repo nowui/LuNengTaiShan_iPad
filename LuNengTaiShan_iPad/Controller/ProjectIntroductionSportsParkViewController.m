@@ -12,6 +12,12 @@
 
 @interface ProjectIntroductionSportsParkViewController () {
     CATransition *transition;
+    UIImageView *titleImageView;
+    UIImageView *textImageView;
+    UIButton *menuItem0Button;
+    UIButton *menuItem1Button;
+    UIButton *menuItem2Button;
+    UIImageView *noteImageView;
 }
 
 @end
@@ -30,6 +36,21 @@
         [backgroundImageView setImage:[UIImage imageNamed:@"project_introduction_sports_park_bg.png"]];
         [self.view addSubview:backgroundImageView];
         
+        noteImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [noteImageView setAlpha:0.0];
+        [noteImageView setImage:[UIImage imageNamed:@"project_introduction_sports_park_note.png"]];
+        [self.view addSubview:noteImageView];
+        
+        titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(58, 64, 199, 72)];
+        [titleImageView setAlpha:0.0];
+        [titleImageView setImage:[UIImage imageNamed:@"project_introduction_sports_park_title.png"]];
+        [self.view addSubview:titleImageView];
+        
+        textImageView = [[UIImageView alloc] initWithFrame:CGRectMake(158, 150, 262, 32)];
+        [textImageView setAlpha:0.0];
+        [textImageView setImage:[UIImage imageNamed:@"project_introduction_sports_park_text.png"]];
+        [self.view addSubview:textImageView];
+        
         UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuButton setFrame:CGRectMake(923, 15, 50, 50)];
         [menuButton setImage:[UIImage imageNamed:@"button_menu.png"] forState:UIControlStateNormal];
@@ -42,25 +63,113 @@
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
         
-        UIButton *menuItem0Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuItem0Button setTag:1];
-        [menuItem0Button setFrame:CGRectMake(196, 326, 145, 38)];
+        menuItem0Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem0Button setTag:0];
+        [menuItem0Button setAlpha:0.0];
+        [menuItem0Button setFrame:CGRectMake(803, 222, 140, 45)];
+        [menuItem0Button setImage:[UIImage imageNamed:@"project_introduction_sports_park_menu_0.png"] forState:UIControlStateNormal];
         [menuItem0Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menuItem0Button];
         
-        UIButton *menuItem1Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        menuItem1Button = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuItem1Button setTag:2];
-        [menuItem1Button setFrame:CGRectMake(573, 392, 145, 38)];
+        [menuItem1Button setAlpha:0.0];
+        [menuItem1Button setFrame:CGRectMake(674, 381, 140, 45)];
+        [menuItem1Button setImage:[UIImage imageNamed:@"project_introduction_sports_park_menu_2.png"] forState:UIControlStateNormal];
         [menuItem1Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menuItem1Button];
         
-        UIButton *menuItem2Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuItem2Button setTag:0];
-        [menuItem2Button setFrame:CGRectMake(703, 221, 145, 38)];
+        menuItem2Button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [menuItem2Button setTag:1];
+        [menuItem2Button setAlpha:0.0];
+        [menuItem2Button setFrame:CGRectMake(297, 327, 140, 45)];
+        [menuItem2Button setImage:[UIImage imageNamed:@"project_introduction_sports_park_menu_1.png"] forState:UIControlStateNormal];
         [menuItem2Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menuItem2Button];
+        
+        [self showNote];
+        
+        [self performSelector:@selector(showTitle) withObject:nil afterDelay:0.5f];
+        
+        [self performSelector:@selector(showText) withObject:nil afterDelay:1.0f];
+        
+        [self performSelector:@selector(showMenuItem2) withObject:nil afterDelay:1.5f];
+        
+        [self performSelector:@selector(showMenuItem1) withObject:nil afterDelay:2.0f];
+        
+        [self performSelector:@selector(showMenuItem0) withObject:nil afterDelay:2.5f];
     }
     return self;
+}
+
+- (void)showNote {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    [noteImageView setAlpha:1.0];
+    [UIView setAnimationDidStopSelector:@selector(hideNote)];
+    [UIView commitAnimations];
+}
+
+- (void)hideNote {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    [noteImageView setAlpha:0.0];
+    [UIView setAnimationDidStopSelector:@selector(showNote)];
+    [UIView commitAnimations];
+}
+
+- (void)showTitle {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    [titleImageView setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showText {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = textImageView.frame;
+    frame.origin.x = 58;
+    [textImageView setFrame:frame];
+    [textImageView setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showMenuItem0 {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = menuItem0Button.frame;
+    frame.origin.x = 703;
+    [menuItem0Button setFrame:frame];
+    [menuItem0Button setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showMenuItem1 {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = menuItem1Button.frame;
+    frame.origin.x = 574;
+    [menuItem1Button setFrame:frame];
+    [menuItem1Button setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showMenuItem2 {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = menuItem2Button.frame;
+    frame.origin.x = 197;
+    [menuItem2Button setFrame:frame];
+    [menuItem2Button setAlpha:1.0];
+    [UIView commitAnimations];
 }
 
 - (void)clickMenuButton:(id)sender {

@@ -13,10 +13,14 @@
 
 @interface ProjectIntroductionViewController () {
     CATransition *transition;
+    UIImageView *noteImageView;
     UIImageView *maskImageView;
     UIButton *menuItem0Button;
     UIButton *menuItem1Button;
     UIButton *menuItem2Button;
+    UIView *maskView;
+    UIImageView *maskTitleImageView;
+    UIImageView *maskTextImageView;
 }
 
 @end
@@ -34,6 +38,11 @@
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [backgroundImageView setImage:[UIImage imageNamed:@"project_introduction_bg.png"]];
         [self.view addSubview:backgroundImageView];
+        
+        noteImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [noteImageView setAlpha:0.0];
+        [noteImageView setImage:[UIImage imageNamed:@"project_introduction_note.png"]];
+        [self.view addSubview:noteImageView];
         
         menuItem0Button = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuItem0Button setTag:0];
@@ -59,13 +68,23 @@
         [menuItem2Button addTarget:self action:@selector(clickBusinessButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menuItem2Button];
         
+        maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [self.view addSubview:maskView];
+        
         maskImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [maskImageView setUserInteractionEnabled:YES];
-        [maskImageView setImage:[UIImage imageNamed:@"project_introduction_mask.png"]];
-        [self.view addSubview:maskImageView];
+        [maskImageView setImage:[UIImage imageNamed:@"project_introduction_mask_bg.png"]];
+        [maskView addSubview:maskImageView];
         
-        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTap:)];
-        [maskImageView addGestureRecognizer:tapGestureRecognizer];
+        maskTitleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(195, 260, 592, 73)];
+        [maskTitleImageView setAlpha:0.0];
+        [maskTitleImageView setImage:[UIImage imageNamed:@"project_introduction_mask_title.png"]];
+        [maskView addSubview:maskTitleImageView];
+        
+        maskTextImageView = [[UIImageView alloc] initWithFrame:CGRectMake(319, 370, 536, 64)];
+        [maskTextImageView setAlpha:0.0];
+        [maskTextImageView setImage:[UIImage imageNamed:@"project_introduction_mask_text.png"]];
+        [maskView addSubview:maskTextImageView];
         
         UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuButton setFrame:CGRectMake(923, 15, 50, 50)];
@@ -78,8 +97,55 @@
         [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
+        
+        [self performSelector:@selector(showMaskTitle) withObject:nil afterDelay:0.5f];
+        
+        [self performSelector:@selector(showMaskText) withObject:nil afterDelay:1.0f];
     }
     return self;
+}
+
+- (void)showNote {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    [noteImageView setAlpha:1.0];
+    [UIView setAnimationDidStopSelector:@selector(hideNote)];
+    [UIView commitAnimations];
+}
+
+- (void)hideNote {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    [noteImageView setAlpha:0.0];
+    [UIView setAnimationDidStopSelector:@selector(showNote)];
+    [UIView commitAnimations];
+}
+
+- (void)showMaskTitle {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    [maskTitleImageView setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (void)showMaskText {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = maskTextImageView.frame;
+    frame.origin.x = 219;
+    [maskTextImageView setFrame:frame];
+    [maskTextImageView setAlpha:1.0];
+    [UIView setAnimationDidStopSelector:@selector(showGesture)];
+    [UIView commitAnimations];
+}
+
+- (void)showGesture {
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTap:)];
+    [maskView addGestureRecognizer:tapGestureRecognizer];
 }
 
 - (void)showMenu0 {
@@ -116,7 +182,9 @@
 }
 
 -(void)clickTap:(UITapGestureRecognizer*)recognizer {
-    [maskImageView removeFromSuperview];
+    [maskView removeFromSuperview];
+    
+    [self showNote];
     
     [self performSelector:@selector(showMenu0) withObject:nil afterDelay:0.0f];
     

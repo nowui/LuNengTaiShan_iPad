@@ -10,4 +10,6 @@
 
 @interface BrandEstate3View : UIView
 
+- (void)play;
+
 @end

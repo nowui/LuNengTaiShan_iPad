@@ -12,6 +12,7 @@
 @interface RoamViewController () {
     CATransition *transition;
     NSString *imageName;
+    UIImageView *handImageView;
 }
 
 @end
@@ -47,6 +48,52 @@
     [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
     [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:closButton];
+    
+    handImageView = [[UIImageView alloc] initWithFrame:CGRectMake(445, 360, 55, 61)];
+    [handImageView setAlpha:0.0];
+    [handImageView setImage:[UIImage imageNamed:@"button_hand.png"]];
+    [self.view addSubview:handImageView];
+    
+    [self performSelector:@selector(show) withObject:nil afterDelay:0.1f];
+}
+
+- (void)show {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    [handImageView setAlpha:1.0];
+    [UIView setAnimationDidStopSelector:@selector(showRight)];
+    [UIView commitAnimations];
+}
+
+- (void)showRight {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = handImageView.frame;
+    frame.origin.x = 545;
+    [handImageView setFrame:frame];
+    [UIView setAnimationDidStopSelector:@selector(showLeft)];
+    [UIView commitAnimations];
+}
+
+- (void)showLeft {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    CGRect frame = handImageView.frame;
+    frame.origin.x = 445;
+    [handImageView setFrame:frame];
+    [UIView setAnimationDidStopSelector:@selector(hide)];
+    [UIView commitAnimations];
+}
+
+- (void)hide {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+    [UIView setAnimationDelegate:self];
+    [handImageView setAlpha:0.0];
+    [UIView commitAnimations];
 }
 
 - (void)clickCloseButton:(id)sender {

@@ -7,10 +7,23 @@
 //
 
 #import "ProjectIntroductionPlanningViewController.h"
+#import "ProjectIntroductionPlanning0View.h"
+#import "ProjectIntroductionPlanning1View.h"
+#import "ProjectIntroductionPlanning2View.h"
+#import "ProjectIntroductionPlanning3View.h"
+#import "ProjectIntroductionPlanning4View.h"
+#import "ProjectIntroductionPlanning5View.h"
 
 @interface ProjectIntroductionPlanningViewController () <UIScrollViewDelegate> {
     CATransition *transition;
     UIImageView *backgroundImageView;
+    UIPageControl *pageControl;
+    ProjectIntroductionPlanning0View *projectIntroductionPlanning0View;
+    ProjectIntroductionPlanning1View *projectIntroductionPlanning1View;
+    ProjectIntroductionPlanning2View *projectIntroductionPlanning2View;
+    ProjectIntroductionPlanning3View *projectIntroductionPlanning3View;
+    ProjectIntroductionPlanning4View *projectIntroductionPlanning4View;
+    ProjectIntroductionPlanning5View *projectIntroductionPlanning5View;
     int selectIndex;
 }
 
@@ -36,21 +49,24 @@
         [mainScrollView setPagingEnabled:YES];
         [self.view addSubview:mainScrollView];
         
-        backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
-        [backgroundImageView setImage:[UIImage imageNamed:@"project_introduction_planning_bg.png"]];
-        [mainScrollView addSubview:backgroundImageView];
+        projectIntroductionPlanning0View = [[ProjectIntroductionPlanning0View alloc] initWithFrame:CGRectMake(1024 * 0, 0, 1024, 768)];
+        [mainScrollView addSubview:projectIntroductionPlanning0View];
         
-        UIButton *menuItem0Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuItem0Button setTag:0];
-        [menuItem0Button setFrame:CGRectMake(382, 265, 50, 50)];
-        [menuItem0Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
-        [mainScrollView addSubview:menuItem0Button];
+        projectIntroductionPlanning1View = [[ProjectIntroductionPlanning1View alloc] initWithFrame:CGRectMake(1024 * 1, 0, 1024, 768)];
+        [mainScrollView addSubview:projectIntroductionPlanning1View];
         
-        UIButton *menuItem1Button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [menuItem1Button setTag:1];
-        [menuItem1Button setFrame:CGRectMake(704, 478, 50, 50)];
-        [menuItem1Button addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
-        [mainScrollView addSubview:menuItem1Button];
+        projectIntroductionPlanning2View = [[ProjectIntroductionPlanning2View alloc] initWithFrame:CGRectMake(1024 * 2, 0, 1024, 768)];
+        [mainScrollView addSubview:projectIntroductionPlanning2View];
+        
+        projectIntroductionPlanning3View = [[ProjectIntroductionPlanning3View alloc] initWithFrame:CGRectMake(1024 * 3, 0, 1024, 768)];
+        [mainScrollView addSubview:projectIntroductionPlanning3View];
+        
+        projectIntroductionPlanning4View = [[ProjectIntroductionPlanning4View alloc] initWithFrame:CGRectMake(1024 * 4, 0, 1024, 768)];
+        [mainScrollView addSubview:projectIntroductionPlanning4View];
+        
+        projectIntroductionPlanning5View = [[ProjectIntroductionPlanning5View alloc] initWithFrame:CGRectMake(1024 * 5, 0, 1024, 768)];
+        [mainScrollView addSubview:projectIntroductionPlanning5View];
+        
         
         UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuButton setFrame:CGRectMake(923, 15, 50, 50)];
@@ -64,13 +80,23 @@
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
         
-        for(int i = 1; i < 6; i++) {
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(1024 * i, 0, 1024, 768)];
-            [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"project_introduction_planning_content_%d_bg.png", i]]];
-            [mainScrollView addSubview:imageView];
-        }
+        pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 738, 1024, 30)];
+        [pageControl setNumberOfPages:6];
+        [pageControl setCurrentPage:0];
+        [pageControl setCurrentPageIndicatorTintColor:[UIColor blueColor]];
+        [pageControl setPageIndicatorTintColor:[UIColor blackColor]];
+        [pageControl setUserInteractionEnabled:NO];
+        [pageControl setValue:[UIImage imageNamed:@"icon_1.png"] forKey:@"pageImage"];
+        [pageControl setValue:[UIImage imageNamed:@"icon_0.png"] forKey:@"currentPageImage"];
+        [self.view addSubview:pageControl];
+        
+        [self performSelector:@selector(play) withObject:nil afterDelay:1.5f];
     }
     return self;
+}
+
+- (void)play {
+    [projectIntroductionPlanning0View play];
 }
 
 - (void)clickMenuButton:(id)sender {
@@ -83,21 +109,6 @@
     [self.navigationController popViewControllerAnimated:NO];
 }
 
-- (void)cickSubMemuItemButton:(id)sender {
-    int tag = (int) ((UIButton *)sender).tag;
-    
-    if(selectIndex == tag) {
-        selectIndex = -1;
-        
-        [backgroundImageView setImage:[UIImage imageNamed:@"project_introduction_planning_bg.png"]];
-    } else {
-        selectIndex = tag;
-        
-        [backgroundImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"project_introduction_planning_%d_bg.png", selectIndex]]];
-        
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -108,14 +119,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    int index = scrollView.contentOffset.x / scrollView.frame.size.width;
+    
+    [pageControl setCurrentPage:index];
+    
+    if (index == 0) {
+        [projectIntroductionPlanning0View play];
+    } else if(index == 1) {
+        [projectIntroductionPlanning1View play];
+    } else if(index == 2) {
+        [projectIntroductionPlanning2View play];
+    } else if(index == 3) {
+        [projectIntroductionPlanning3View play];
+    } else if(index == 4) {
+        [projectIntroductionPlanning4View play];
+    } else if(index == 5) {
+        [projectIntroductionPlanning5View play];
+    }
 }
-*/
 
 @end

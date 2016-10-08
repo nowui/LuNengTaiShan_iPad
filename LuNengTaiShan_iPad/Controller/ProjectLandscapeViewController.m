@@ -7,9 +7,16 @@
 //
 
 #import "ProjectLandscapeViewController.h"
+#import "ProjectLandscape0View.h"
+#import "ProjectLandscape1View.h"
+#import "ProjectLandscape2View.h"
 
 @interface ProjectLandscapeViewController () <UIScrollViewDelegate> {
     CATransition *transition;
+    UIPageControl *pageControl;
+    ProjectLandscape0View *projectLandscape0View;
+    ProjectLandscape1View *projectLandscape1View;
+    ProjectLandscape2View *projectLandscape2View;
 }
 
 @end
@@ -32,11 +39,14 @@
         [mainScrollView setPagingEnabled:YES];
         [self.view addSubview:mainScrollView];
         
-        for(int i = 0; i < 3; i++) {
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(1024 * i, 0, 1024, 768)];
-            [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"project_landscape_%d_bg.png", i]]];
-            [mainScrollView addSubview:imageView];
-        }
+        projectLandscape0View = [[ProjectLandscape0View alloc] initWithFrame:CGRectMake(1024 * 0, 0, 1024, 768)];
+        [mainScrollView addSubview:projectLandscape0View];
+        
+        projectLandscape1View = [[ProjectLandscape1View alloc] initWithFrame:CGRectMake(1024 * 1, 0, 1024, 768)];
+        [mainScrollView addSubview:projectLandscape1View];
+        
+        projectLandscape2View = [[ProjectLandscape2View alloc] initWithFrame:CGRectMake(1024 * 2, 0, 1024, 768)];
+        [mainScrollView addSubview:projectLandscape2View];
         
         UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuButton setFrame:CGRectMake(923, 15, 50, 50)];
@@ -49,8 +59,24 @@
         [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
         [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:closButton];
+        
+        pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 738, 1024, 30)];
+        [pageControl setNumberOfPages:3];
+        [pageControl setCurrentPage:0];
+        [pageControl setCurrentPageIndicatorTintColor:[UIColor blueColor]];
+        [pageControl setPageIndicatorTintColor:[UIColor blackColor]];
+        [pageControl setUserInteractionEnabled:NO];
+        [pageControl setValue:[UIImage imageNamed:@"icon_1.png"] forKey:@"pageImage"];
+        [pageControl setValue:[UIImage imageNamed:@"icon_0.png"] forKey:@"currentPageImage"];
+        [self.view addSubview:pageControl];
+        
+        [self performSelector:@selector(play) withObject:nil afterDelay:1.5f];
     }
     return self;
+}
+
+- (void)play {
+    [projectLandscape0View play];
 }
 
 - (void)clickMenuButton:(id)sender {
@@ -73,14 +99,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    int index = scrollView.contentOffset.x / scrollView.frame.size.width;
+    
+    [pageControl setCurrentPage:index];
+    
+    if (index == 0) {
+        [projectLandscape0View play];
+    } else if(index == 1) {
+        [projectLandscape1View play];
+    } else if(index == 2) {
+        [projectLandscape2View play];
+    }
 }
-*/
 
 @end

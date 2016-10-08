@@ -51,7 +51,7 @@
         menu0Button = [UIButton buttonWithType:UIButtonTypeCustom];
         [menu0Button setAlpha:0.0];
         [menu0Button setFrame:CGRectMake(534, 525, 88, 66)];
-        [menu0Button setImage:[UIImage imageNamed:@"main_menu_0"] forState:UIControlStateNormal];
+        [menu0Button setImage:[UIImage imageNamed:@"main_menu_0.png"] forState:UIControlStateNormal];
         [menu0Button setImage:[UIImage imageNamed:@"main_menu_0_active.png"] forState:UIControlStateHighlighted];
         [menu0Button addTarget:self action:@selector(clickBrandButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menu0Button];
@@ -59,7 +59,7 @@
         menu1Button = [UIButton buttonWithType:UIButtonTypeCustom];
         [menu1Button setAlpha:0.0];
         [menu1Button setFrame:CGRectMake(684, 525, 108, 66)];
-        [menu1Button setImage:[UIImage imageNamed:@"main_menu_1"] forState:UIControlStateNormal];
+        [menu1Button setImage:[UIImage imageNamed:@"main_menu_1.png"] forState:UIControlStateNormal];
         [menu1Button setImage:[UIImage imageNamed:@"main_menu_1_active.png"] forState:UIControlStateHighlighted];
         [menu1Button addTarget:self action:@selector(clickRegionalButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menu1Button];
@@ -67,7 +67,7 @@
         menu2Button = [UIButton buttonWithType:UIButtonTypeCustom];
         [menu2Button setAlpha:0.0];
         [menu2Button setFrame:CGRectMake(856, 525, 81, 66)];
-        [menu2Button setImage:[UIImage imageNamed:@"main_menu_2"] forState:UIControlStateNormal];
+        [menu2Button setImage:[UIImage imageNamed:@"main_menu_2.png"] forState:UIControlStateNormal];
         [menu2Button setImage:[UIImage imageNamed:@"main_menu_2_active.png"] forState:UIControlStateHighlighted];
         [menu2Button addTarget:self action:@selector(clickProjectButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menu2Button];
@@ -76,18 +76,9 @@
         [menu3Button setAlpha:0.0];
         [menu3Button setFrame:CGRectMake(1031, 509, 71, 106)];
         [menu3Button setImage:[UIImage imageNamed:@"main_video.png"] forState:UIControlStateNormal];
+        [menu3Button setImage:[UIImage imageNamed:@"main_video_active.png"] forState:UIControlStateHighlighted];
         [menu3Button addTarget:self action:@selector(clickVideoButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:menu3Button];
-        
-        UIButton *projectButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [projectButton setFrame:CGRectMake(757, 524, 80, 66)];
-        [projectButton addTarget:self action:@selector(clickProjectButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:projectButton];
-        
-        UIButton *videoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [videoButton setFrame:CGRectMake(930, 524, 74, 66)];
-        [videoButton addTarget:self action:@selector(clickVideoButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:videoButton];
         
         [self performSelector:@selector(showLogo) withObject:nil afterDelay:0.5f];
         [self performSelector:@selector(showFootball) withObject:nil afterDelay:1.0f];

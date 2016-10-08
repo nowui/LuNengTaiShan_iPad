@@ -34,7 +34,7 @@
         [backgroundImageView setImage:[UIImage imageNamed:@"video_bg.png"]];
         [self.view addSubview:backgroundImageView];
         
-        playerView = [[GUIPlayerView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        playerView = [[GUIPlayerView alloc] initWithFrame:CGRectMake(256, 192, 512, 384)];
         [playerView setDelegate:self];
         [playerView setVideoURL:[[NSBundle mainBundle] URLForResource:@"sport" withExtension:@"mp4"]];
         [playerView prepareAndPlayAutomatically:YES];

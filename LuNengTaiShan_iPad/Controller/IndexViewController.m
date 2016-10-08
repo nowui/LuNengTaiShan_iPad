@@ -8,6 +8,7 @@
 
 #import "IndexViewController.h"
 #import "MainViewController.h"
+//#import "CalculatorView.h"
 
 @interface IndexViewController () {
     UIImageView *logoImageView;
@@ -43,30 +44,35 @@
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         transition.type = @"rippleEffect";
         
-        UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        /*UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
         [backgroundImageView setImage:[UIImage imageNamed:@"index_bg.png"]];
-        [self.view addSubview:backgroundImageView];
+        [self.view addSubview:backgroundImageView];*/
         
-        logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(422, 97, 380, 207)];
-        [logoImageView setAlpha:0.0];
-        [logoImageView setImage:[UIImage imageNamed:@"index_logo.png"]];
+        //[self performSelector:@selector(showLogo) withObject:nil afterDelay:1.0f];
+        
+        /*textImageView = [[UIImageView alloc] initWithFrame:CGRectMake(508, 335, 207, 47)];
+         [textImageView setAlpha:0.0];
+         [textImageView setImage:[UIImage imageNamed:@"index_text.png"]];
+         [self.view addSubview:textImageView];
+         
+         [self performSelector:@selector(showText) withObject:nil afterDelay:1.5f];*/
+        
+        
+        
+        
+        
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        for (int i = 0; i < 151; i++) {
+            [array addObject:[UIImage imageNamed:[NSString stringWithFormat:@"鲁能_00%.3d.png", i]]];
+        }
+        
+        logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+        [logoImageView setImage:[UIImage imageNamed:@"鲁能_00150.png"]];
+        [logoImageView setAnimationImages:array];
+        [logoImageView setAnimationDuration:6];
+        [logoImageView setAnimationRepeatCount:1];
+        [logoImageView startAnimating];
         [self.view addSubview:logoImageView];
-        
-        [self performSelector:@selector(showLogo) withObject:nil afterDelay:1.0f];
-        
-        textImageView = [[UIImageView alloc] initWithFrame:CGRectMake(508, 335, 207, 47)];
-        [textImageView setAlpha:0.0];
-        [textImageView setImage:[UIImage imageNamed:@"index_text.png"]];
-        [self.view addSubview:textImageView];
-        
-        [self performSelector:@selector(showText) withObject:nil afterDelay:1.5f];
-        
-        addressImageView = [[UIImageView alloc] initWithFrame:CGRectMake(396, 722, 437, 24)];
-        [addressImageView setAlpha:0.0];
-        [addressImageView setImage:[UIImage imageNamed:@"index_address.png"]];
-        [self.view addSubview:addressImageView];
-        
-        [self performSelector:@selector(showAddress) withObject:nil afterDelay:2.5f];
         
         button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setAlpha:0.0];
@@ -76,97 +82,115 @@
         [button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         
-        [self performSelector:@selector(showButton) withObject:nil afterDelay:2.0f];
+        [self performSelector:@selector(showButton) withObject:nil afterDelay:10.0];
+        
+        addressImageView = [[UIImageView alloc] initWithFrame:CGRectMake(396, 722, 437, 24)];
+        [addressImageView setAlpha:0.0];
+        [addressImageView setImage:[UIImage imageNamed:@"index_address.png"]];
+        [self.view addSubview:addressImageView];
+        
+        [self performSelector:@selector(showAddress) withObject:nil afterDelay:10.5f];
         
         line0ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 582, 1024, 148)];
+        [line0ImageView setAlpha:0.0];
         [line0ImageView setImage:[UIImage imageNamed:@"index_line_0.png"]];
         [self.view addSubview:line0ImageView];
         
-        [self performSelector:@selector(showLine00) withObject:nil afterDelay:0.0f];
+        [self performSelector:@selector(showLine00) withObject:nil afterDelay:10.0];
         
         line1ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 582, 1024, 148)];
+        [line1ImageView setAlpha:0.0];
         [line1ImageView setImage:[UIImage imageNamed:@"index_line_1.png"]];
         [self.view addSubview:line1ImageView];
         
-        [self performSelector:@selector(showLine10) withObject:nil afterDelay:0.0f];
+        [self performSelector:@selector(showLine10) withObject:nil afterDelay:10.0];
         
         line2ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 582, 1024, 148)];
+        [line2ImageView setAlpha:0.0];
         [line2ImageView setImage:[UIImage imageNamed:@"index_line_2.png"]];
         [self.view addSubview:line2ImageView];
         
-        [self performSelector:@selector(showLine20) withObject:nil afterDelay:0.0f];
+        [self performSelector:@selector(showLine20) withObject:nil afterDelay:10.0];
         
         line3ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 582, 1024, 148)];
+        [line3ImageView setAlpha:0.0];
         [line3ImageView setImage:[UIImage imageNamed:@"index_line_3.png"]];
         [self.view addSubview:line3ImageView];
         
-        [self performSelector:@selector(showLine30) withObject:nil afterDelay:0.0f];
+        [self performSelector:@selector(showLine30) withObject:nil afterDelay:10.0];
         
         line4ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 582, 1024, 148)];
+        [line4ImageView setAlpha:0.0];
         [line4ImageView setImage:[UIImage imageNamed:@"index_line_4.png"]];
         [self.view addSubview:line4ImageView];
         
-        [self performSelector:@selector(showLine40) withObject:nil afterDelay:0.0f];
+        [self performSelector:@selector(showLine40) withObject:nil afterDelay:10.0];
         
         line5ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 582, 1024, 148)];
+        [line5ImageView setAlpha:0.0];
         [line5ImageView setImage:[UIImage imageNamed:@"index_line_5.png"]];
         [self.view addSubview:line5ImageView];
         
-        [self performSelector:@selector(showLine50) withObject:nil afterDelay:0.0f];
+        [self performSelector:@selector(showLine50) withObject:nil afterDelay:10.0];
         
         sprite0ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(130, 567, 23, 34)];
         [sprite0ImageView setAlpha:0.0];
         [sprite0ImageView setImage:[UIImage imageNamed:@"index_sprite_0.png"]];
         [self.view addSubview:sprite0ImageView];
         
-        [self performSelector:@selector(showSprite00) withObject:nil afterDelay:0.0f];
+        [self performSelector:@selector(showSprite00) withObject:nil afterDelay:10.0];
         
         sprite1ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(159, 582, 42, 60)];
         [sprite1ImageView setAlpha:0.0];
         [sprite1ImageView setImage:[UIImage imageNamed:@"index_sprite_1.png"]];
         [self.view addSubview:sprite1ImageView];
         
-        [self performSelector:@selector(showSprite10) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(showSprite10) withObject:nil afterDelay:10.5f];
         
         sprite2ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(218, 573, 60, 46)];
         [sprite2ImageView setAlpha:0.0];
         [sprite2ImageView setImage:[UIImage imageNamed:@"index_sprite_2.png"]];
         [self.view addSubview:sprite2ImageView];
         
-        [self performSelector:@selector(showSprite20) withObject:nil afterDelay:1.5f];
+        [self performSelector:@selector(showSprite20) withObject:nil afterDelay:10.7f];
         
         sprite3ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(393, 533, 20, 109)];
+        [sprite3ImageView setAlpha:0.0];
         [sprite3ImageView setImage:[UIImage imageNamed:@"index_sprite_3.png"]];
         [self.view addSubview:sprite3ImageView];
         
-        [self performSelector:@selector(showSprite30) withObject:nil afterDelay:0.3f];
+        [self performSelector:@selector(showSprite30) withObject:nil afterDelay:10.3f];
         
         sprite4ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(605, 587, 35, 50)];
+        [sprite4ImageView setAlpha:0.0];
         [sprite4ImageView setImage:[UIImage imageNamed:@"index_sprite_4.png"]];
         [self.view addSubview:sprite4ImageView];
         
-        [self performSelector:@selector(showSprite40) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(showSprite40) withObject:nil afterDelay:10.3f];
         
         sprite5ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(725, 558, 49, 64)];
+        [sprite5ImageView setAlpha:0.0];
         [sprite5ImageView setImage:[UIImage imageNamed:@"index_sprite_5.png"]];
         [self.view addSubview:sprite5ImageView];
         
-        [self performSelector:@selector(showSprite50) withObject:nil afterDelay:0.1f];
+        [self performSelector:@selector(showSprite50) withObject:nil afterDelay:10.1f];
         
         sprite6ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(863, 562, 33, 62)];
+        [sprite6ImageView setAlpha:0.0];
         [sprite6ImageView setImage:[UIImage imageNamed:@"index_sprite_6.png"]];
         [self.view addSubview:sprite6ImageView];
         
-        [self performSelector:@selector(showSprite60) withObject:nil afterDelay:0.4f];
+        [self performSelector:@selector(showSprite60) withObject:nil afterDelay:10.4f];
         
         sprite7ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(903, 538, 51, 55)];
+        [sprite7ImageView setAlpha:0.0];
         [sprite7ImageView setImage:[UIImage imageNamed:@"index_sprite_7.png"]];
         [self.view addSubview:sprite7ImageView];
         
-        [self performSelector:@selector(showSprite70) withObject:nil afterDelay:0.1f];
+        [self performSelector:@selector(showSprite70) withObject:nil afterDelay:10.1f];
         
         /*CalculatorView *calculatorView = [[CalculatorView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
-         [self.view addSubview:calculatorView];*/
+        [self.view addSubview:calculatorView];*/
     }
     return self;
 }
@@ -762,6 +786,7 @@
     CGRect frame = line0ImageView.frame;
     frame.origin.y = 582;
     [line0ImageView setFrame:frame];
+    [line0ImageView setAlpha:1.0];
     [UIView setAnimationDidStopSelector:@selector(showLine00)];
     [UIView commitAnimations];
 }
@@ -785,6 +810,7 @@
     CGRect frame = line1ImageView.frame;
     frame.origin.y = 582;
     [line1ImageView setFrame:frame];
+    [line1ImageView setAlpha:1.0];
     [UIView setAnimationDidStopSelector:@selector(showLine10)];
     [UIView commitAnimations];
 }
@@ -808,6 +834,7 @@
     CGRect frame = line2ImageView.frame;
     frame.origin.y = 582;
     [line2ImageView setFrame:frame];
+    [line2ImageView setAlpha:1.0];
     [UIView setAnimationDidStopSelector:@selector(showLine20)];
     [UIView commitAnimations];
 }
@@ -831,6 +858,7 @@
     CGRect frame = line3ImageView.frame;
     frame.origin.y = 582;
     [line3ImageView setFrame:frame];
+    [line3ImageView setAlpha:1.0];
     [UIView setAnimationDidStopSelector:@selector(showLine30)];
     [UIView commitAnimations];
 }
@@ -854,6 +882,7 @@
     CGRect frame = line4ImageView.frame;
     frame.origin.y = 582;
     [line4ImageView setFrame:frame];
+    [line4ImageView setAlpha:1.0];
     [UIView setAnimationDidStopSelector:@selector(showLine40)];
     [UIView commitAnimations];
 }
@@ -877,6 +906,7 @@
     CGRect frame = line5ImageView.frame;
     frame.origin.y = 582;
     [line5ImageView setFrame:frame];
+    [line5ImageView setAlpha:1.0];
     [UIView setAnimationDidStopSelector:@selector(showLine50)];
     [UIView commitAnimations];
 }
