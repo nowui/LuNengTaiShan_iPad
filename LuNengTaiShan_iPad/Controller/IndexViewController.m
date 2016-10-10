@@ -30,6 +30,8 @@
     UIImageView *line3ImageView;
     UIImageView *line4ImageView;
     UIImageView *line5ImageView;
+    int logoIndex;
+    NSTimer *timer;
 }
 
 @end
@@ -58,21 +60,24 @@
          [self performSelector:@selector(showText) withObject:nil afterDelay:1.5f];*/
         
         
+        logoIndex = 0;
         
         
-        
-        NSMutableArray *array = [[NSMutableArray alloc] init];
+       // NSMutableArray *array = [[NSMutableArray alloc] init];
         for (int i = 0; i < 151; i++) {
-            [array addObject:[UIImage imageNamed:[NSString stringWithFormat:@"鲁能_00%.3d.png", i]]];
+            //[array addObject:[UIImage imageNamed:[NSString stringWithFormat:@"鲁能_00%.3d.png", i]]];
         }
         
         logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
-        [logoImageView setImage:[UIImage imageNamed:@"鲁能_00150.png"]];
-        [logoImageView setAnimationImages:array];
-        [logoImageView setAnimationDuration:6];
-        [logoImageView setAnimationRepeatCount:1];
-        [logoImageView startAnimating];
+        //[logoImageView setImage:[UIImage imageNamed:@"鲁能_00150.png"]];
+        //[logoImageView setAnimationImages:array];
+        //[logoImageView setAnimationDuration:6];
+        //[logoImageView setAnimationRepeatCount:1];
+        //[logoImageView startAnimating];
         [self.view addSubview:logoImageView];
+        
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.07 target:self selector:@selector(updateLogo) userInfo:nil repeats:YES];
+        [timer fire];
         
         button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setAlpha:0.0];
@@ -193,6 +198,17 @@
         [self.view addSubview:calculatorView];*/
     }
     return self;
+}
+
+- (void)updateLogo {
+    //[logoImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"鲁能_00%.3d.png", logoIndex]]];
+    [logoImageView setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"鲁能_00%.3d", logoIndex] ofType:@"png"]]];
+    
+    logoIndex++;
+    
+    if (logoIndex >= 150) {
+        [timer invalidate];
+    }
 }
 
 - (void)showLogo {
