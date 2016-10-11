@@ -292,7 +292,9 @@
     [UIView setAnimationDuration:1.0f];
     [UIView setAnimationDelegate:self];
     if(tag == 0) {
-        [roamButton setAlpha:1.0];
+        if([name isEqual:@"B_000"]) {
+            [roamButton setAlpha:1.0];
+        }
         
         [typeImageView setAlpha:0.0];
         

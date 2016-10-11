@@ -349,12 +349,6 @@
         //[menu1Button addTarget:self action:@selector(clickCountButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:menu1Button];
         
-        UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [closButton setFrame:CGRectMake(962, 15, 50, 50)];
-        [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateHighlighted];
-        [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:closButton];
-        
         houseMoneyLabel = [[UILabel alloc] initWithFrame:CGRectMake(255, 505, 161, 15)];
         [houseMoneyLabel setText:@"0.00"];
         [houseMoneyLabel setTextColor:[UIColor whiteColor]];
@@ -465,6 +459,12 @@
         [pay1Button setSelected:NO];
         
         dataArray = [[NSMutableArray alloc] init];
+        
+        UIButton *closButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [closButton setFrame:CGRectMake(962, 15, 50, 50)];
+        [closButton setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
+        [closButton addTarget:self action:@selector(clickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:closButton];
     }
     return self;
 }

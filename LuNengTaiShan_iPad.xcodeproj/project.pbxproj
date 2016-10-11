@@ -7679,7 +7679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yongqiang Zhong (7A5K69VZRP)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yongqiang Zhong (7A5K69VZRP)";
 				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = LuNengTaiShan_iPad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -7696,7 +7696,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yongqiang Zhong (7A5K69VZRP)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yongqiang Zhong (7A5K69VZRP)";
 				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = LuNengTaiShan_iPad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
