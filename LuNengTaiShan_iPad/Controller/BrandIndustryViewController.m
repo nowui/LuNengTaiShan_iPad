@@ -300,11 +300,11 @@
         [menuView addSubview:guangdongButton];
         
         jilingButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [jilingButton setTag:13];
+        [jilingButton setTag:14];
         [jilingButton setFrame:CGRectMake(809, 168, 35, 58)];
-        [jilingButton setImage:[UIImage imageNamed:@"brand_industry_jiling.png"] forState:UIControlStateNormal];
-        [jilingButton setImage:[UIImage imageNamed:@"brand_industry_jiling.png"] forState:UIControlStateHighlighted];
-        [jilingButton setImage:[UIImage imageNamed:@"brand_industry_jiling_active.png"] forState:UIControlStateSelected];
+        [jilingButton setImage:[UIImage imageNamed:@"brand_industry_jilin.png"] forState:UIControlStateNormal];
+        [jilingButton setImage:[UIImage imageNamed:@"brand_industry_jilin.png"] forState:UIControlStateHighlighted];
+        [jilingButton setImage:[UIImage imageNamed:@"brand_industry_jilin_active.png"] forState:UIControlStateSelected];
         [jilingButton addTarget:self action:@selector(cickSubMemuItemButton:) forControlEvents:UIControlEventTouchUpInside];
         [menuView addSubview:jilingButton];
         
@@ -522,12 +522,12 @@
         [sichuanButton setSelected:YES];
         [hainanButton setSelected:YES];
         [hebeiButton setSelected:YES];
-        //[jilingButton setSelected:YES];
+        [jilingButton setSelected:YES];
         
         [sichuanImageView setAlpha:0.5];
         [hainanImageView setAlpha:0.5];
         [hebeiImageView setAlpha:0.5];
-        //[jilingImageView setAlpha:0.5];
+        [jilingImageView setAlpha:0.5];
         
     } else if(selectIndex == 3) {
         [menuItem3Button setSelected:YES];
