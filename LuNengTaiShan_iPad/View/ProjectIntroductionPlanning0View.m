@@ -49,6 +49,29 @@
         [alertImageView setImage:[UIImage imageNamed:@"project_introduction_planning_0_text.png"]];
         [self addSubview:alertImageView];
         
+        CABasicAnimation *circleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        [circleAnimation setDelegate:self];
+        circleAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+        circleAnimation.duration = 1.0f;
+        circleAnimation.repeatCount = HUGE_VALF;
+        circleAnimation.autoreverses = YES;
+        circleAnimation.fillMode=kCAFillModeForwards;
+        circleAnimation.removedOnCompletion = NO;
+        circleAnimation.fromValue = [NSNumber numberWithFloat:1.0];
+        circleAnimation.toValue = [NSNumber numberWithFloat:1.7];
+        
+        UIImageView *menuItem0ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(392, 275, 23, 23)];
+        //[menuItem0ImageView setAlpha:0.0];
+        [menuItem0ImageView setImage:[UIImage imageNamed:@"project_introduction_planning_circle.png"]];
+        [menuItem0ImageView.layer addAnimation:circleAnimation forKey:@"circleAnimation"];
+        [self addSubview:menuItem0ImageView];
+        
+        UIImageView *menuItem1ImageView = [[UIImageView alloc] initWithFrame:CGRectMake(716, 493, 23, 23)];
+        //[menuItem1ImageView setAlpha:0.0];
+        [menuItem1ImageView setImage:[UIImage imageNamed:@"project_introduction_planning_circle.png"]];
+        [menuItem1ImageView.layer addAnimation:circleAnimation forKey:@"circleAnimation"];
+        [self addSubview:menuItem1ImageView];
+        
         UIButton *menuItem0Button = [UIButton buttonWithType:UIButtonTypeCustom];
         [menuItem0Button setTag:0];
         [menuItem0Button setFrame:CGRectMake(382, 265, 50, 50)];
