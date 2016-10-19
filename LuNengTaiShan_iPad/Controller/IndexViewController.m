@@ -928,9 +928,27 @@
 }
 
 - (void)clickButton:(id)sender {
-    MainViewController *mainViewController = [[MainViewController alloc] init];
-    [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
-    [[self navigationController] pushViewController:mainViewController animated:NO];
+    NSDate *date = [NSDate date];
+    
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *currentDate = [dateFormatter dateFromString:@"2016-10-27 00:00:00"];
+    
+    NSDate *earlierDate = [date earlierDate:currentDate];
+    
+    NSLog(@"earlierDate  = %@",earlierDate);
+    
+    if([date isEqualToDate:earlierDate]) {
+        MainViewController *mainViewController = [[MainViewController alloc] init];
+        [[[[self navigationController] view] layer] addAnimation:transition forKey:nil];
+        [[self navigationController] pushViewController:mainViewController animated:NO];
+    } else {
+        UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"系统提示" message:@"授权已经超时" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        
+        [myAlert show];
+    }
+    
 }
 
 - (void)viewDidLoad {
