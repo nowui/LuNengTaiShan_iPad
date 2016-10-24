@@ -7690,7 +7690,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nowui.LuNengTaiShan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cbb93a73-c4c0-48e3-8448-103731527fdf";
+				PROVISIONING_PROFILE = "8c95ea55-1c17-4b72-97e0-74e3aaa5a24f";
 			};
 			name = Debug;
 		};
@@ -7707,7 +7707,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nowui.LuNengTaiShan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cbb93a73-c4c0-48e3-8448-103731527fdf";
+				PROVISIONING_PROFILE = "8c95ea55-1c17-4b72-97e0-74e3aaa5a24f";
 			};
 			name = Release;
 		};

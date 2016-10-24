@@ -933,7 +933,7 @@
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate *currentDate = [dateFormatter dateFromString:@"2016-10-27 00:00:00"];
+    NSDate *currentDate = [dateFormatter dateFromString:@"2016-11-30 00:00:00"];
     
     NSDate *earlierDate = [date earlierDate:currentDate];
     
