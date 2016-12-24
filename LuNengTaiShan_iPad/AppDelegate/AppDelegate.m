@@ -32,10 +32,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 487, 100)];
-    [backgroundImageView setImage:[UIImage imageNamed:@"logo.png"]];
-    [self.window addSubview:backgroundImageView];
-    [self.window bringSubviewToFront:backgroundImageView];
+//    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 487, 100)];
+//    [backgroundImageView setImage:[UIImage imageNamed:@"logo.png"]];
+//    [self.window addSubview:backgroundImageView];
+//    [self.window bringSubviewToFront:backgroundImageView];
     
     return YES;
 }
